@@ -386,6 +386,50 @@ section h3 {
 .glass-hero h1 { letter-spacing: 1px; font-weight: 800; }
 .glass-hero p.lead { max-width: 760px; margin: 0.75rem auto 1.25rem; }
 
+/* CTA box (white-outlined rectangle) */
+.cta-box {
+    border: 3px solid rgba(255,255,255,0.12);
+    padding: 18px 26px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.02);
+    width: min(720px, 86%);
+    margin-top: 18px;
+}
+.cta-inner {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:22px;
+}
+
+/* refine button visuals to match reference */
+.btn-primary {
+    padding: 14px 44px;
+    background: linear-gradient(90deg, #00d084 0%, #07c889 45%, #09b58a 100%);
+    border-radius: 999px;
+    box-shadow: 0 16px 40px rgba(0,208,132,0.18), inset 0 -6px 20px rgba(0,0,0,0.06);
+    color: #021017;
+    font-weight: 700;
+}
+.btn-primary svg { filter: drop-shadow(0 3px 8px rgba(0,0,0,0.25)); }
+
+.btn-secondary {
+    padding: 12px 38px;
+    border-radius: 999px;
+    border: 2px solid rgba(0,208,132,0.9);
+    background: transparent;
+    color: #00d084;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.24), inset 0 0 18px rgba(0,208,132,0.03);
+    font-weight: 700;
+}
+.btn-secondary:hover { background: rgba(0,208,132,0.06); color: #dffbf0; }
+
+@media (max-width: 640px) {
+    .cta-box { padding: 12px 14px; }
+    .cta-inner { gap: 12px; flex-direction:column; }
+    .btn-primary, .btn-secondary { width: 100%; text-align:center; }
+}
+
 /* Hologram Effect */
 .hologram {
     position: relative;
