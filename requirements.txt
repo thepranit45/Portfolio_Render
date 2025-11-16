@@ -7,5 +7,5 @@ tzdata==2025.2
 wheel==0.45.1
 whitenoise==6.11.0
 gunicorn==21.2.0
-dj-database-url==1.4.0
+dj-database-url==3.0.1
 psycopg2-binary==2.9.10
