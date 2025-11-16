@@ -1,0 +1,135 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Pranit Gopale — Projects{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32">
+  <div class="container mx-auto px-6">
+    <h1 class="mb-4">📂 Featured Projects</h1>
+    <p class="text-gray-400 mb-12 text-lg">A showcase of my latest work in mobile and IoT development</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Student Result System (whole card clickable) -->
+      <a href="{% url 'portfolio:project_detail' slug='student-result' %}" class="block no-underline">
+        <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+          <div class="mb-4 flex items-start justify-between">
+            <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">Education</span>
+            <span class="text-3xl">🎓</span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Student Result System</h3>
+          <p class="text-gray-300 mb-4 leading-relaxed text-sm">A result management system with admin dashboard, marks entry, automatic CGPA calculation and student result downloads.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+            <div class="text-xs text-gray-400 space-y-1">
+              <p>🔧 <span>PHP • MySQL</span></p>
+              <p>🛠️ <span>XAMPP/WAMP</span></p>
+            </div>
+            <span class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Smart Home Sensor -->
+      <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+        <div class="mb-4 flex items-start justify-between">
+          <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">IoT</span>
+          <span class="text-3xl">🏠</span>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Smart Home Sensor</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed text-sm">An ESP32-based sensor node that reports temperature and humidity to a cloud dashboard over MQTT. Features real-time data sync and mobile alerts.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+          <div class="text-xs text-gray-400 space-y-1">
+            <p>🔧 <span>ESP32 • MQTT</span></p>
+            <p>☁️ <span>Firebase</span></p>
+          </div>
+          <a href="#" class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</a>
+        </div>
+      </div>
+
+      <!-- Android Media App -->
+      <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+        <div class="mb-4 flex items-start justify-between">
+          <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">Mobile</span>
+          <span class="text-3xl">📱</span>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Android Media App</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed text-sm">A media-rich Android application showcasing local storage, playback controls, and beautiful UI using Jetpack Compose with Material 3.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+          <div class="text-xs text-gray-400 space-y-1">
+            <p>🎯 <span>Kotlin • Compose</span></p>
+            <p>💾 <span>Room DB</span></p>
+          </div>
+          <a href="#" class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</a>
+        </div>
+      </div>
+
+      <!-- IoT Dashboard -->
+      <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+        <div class="mb-4 flex items-start justify-between">
+          <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">Dashboard</span>
+          <span class="text-3xl">📊</span>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">IoT Dashboard</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed text-sm">A responsive web dashboard to visualize sensor data in real-time and send control messages back to connected devices.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+          <div class="text-xs text-gray-400 space-y-1">
+            <p>⚛️ <span>React • MQTT</span></p>
+            <p>📈 <span>Charts</span></p>
+          </div>
+          <a href="#" class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</a>
+        </div>
+      </div>
+
+      <!-- Bluetooth Device Controller -->
+      <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+        <div class="mb-4 flex items-start justify-between">
+          <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">App</span>
+          <span class="text-3xl">🎮</span>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">BLE Device Controller</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Android app for controlling Bluetooth Low Energy devices with a sleek interface for device discovery, pairing, and real-time communication.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+          <div class="text-xs text-gray-400 space-y-1">
+            <p>🎯 <span>Kotlin • BLE</span></p>
+            <p>⚡ <span>Coroutines</span></p>
+          </div>
+          <a href="#" class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</a>
+        </div>
+      </div>
+
+      <!-- Weather Station -->
+      <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+        <div class="mb-4 flex items-start justify-between">
+          <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">Hardware</span>
+          <span class="text-3xl">🌡️</span>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Weather Station</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Complete weather monitoring system with Arduino/ESP32, multiple sensors, cloud data storage, and a dedicated mobile app for live updates.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+          <div class="text-xs text-gray-400 space-y-1">
+            <p>🔧 <span>Arduino • Sensors</span></p>
+            <p>🌐 <span>API</span></p>
+          </div>
+          <a href="#" class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</a>
+        </div>
+      </div>
+
+      <!-- Performance Monitor -->
+      <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+        <div class="mb-4 flex items-start justify-between">
+          <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">Tool</span>
+          <span class="text-3xl">⚙️</span>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">App Performance Monitor</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Profiling tool for Android apps that tracks CPU, memory, and battery usage in real-time with detailed analytics and export capabilities.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+          <div class="text-xs text-gray-400 space-y-1">
+            <p>🎯 <span>Kotlin • Profiling</span></p>
+            <p>📊 <span>Android</span></p>
+          </div>
+          <a href="#" class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,159 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Pranit Gopale — Skills{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32">
+  <div class="container mx-auto px-6">
+    <h1 class="mb-4">⚡ My Skills & Expertise</h1>
+    <p class="text-gray-400 mb-12 text-lg">A comprehensive toolkit for building cutting-edge mobile and IoT solutions</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <!-- Mobile Development -->
+      <div class="glass p-8 rounded-2xl subtle-glow overflow-hidden group hover-scale">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-5xl">📱</span>
+          <h3 class="text-2xl font-semibold">Mobile Development</h3>
+        </div>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Kotlin & Java Programming</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Android SDK & Jetpack Compose</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Performance Optimization & Profiling</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Google Play Store Deployment</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Embedded & IoT -->
+      <div class="glass p-8 rounded-2xl subtle-glow overflow-hidden group hover-scale">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-5xl">⚙️</span>
+          <h3 class="text-2xl font-semibold">Embedded & IoT</h3>
+        </div>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>ESP32 & Arduino Programming</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Bluetooth LE & BLE Protocols</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>MQTT & Cloud Integration</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Sensor Interfacing & Data Collection</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tools & Infrastructure -->
+      <div class="glass p-8 rounded-2xl subtle-glow overflow-hidden group hover-scale">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-5xl">🛠️</span>
+          <h3 class="text-2xl font-semibold">Tools & Infrastructure</h3>
+        </div>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Git & Version Control</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Firebase & Cloud Services</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>SQLite & Room Database</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Docker & REST APIs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Design & UX -->
+      <div class="glass p-8 rounded-2xl subtle-glow overflow-hidden group hover-scale">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-5xl">🎨</span>
+          <h3 class="text-2xl font-semibold">Design & UX</h3>
+        </div>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Material Design & Modern UI</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>User Experience Optimization</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Responsive & Adaptive Design</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-primary text-xl">✓</span>
+            <span>Accessibility & Best Practices</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Technical Stack -->
+    <div class="glass p-8 rounded-2xl subtle-glow">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <span>🔧</span> Technical Stack
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">🎯</div>
+          <p class="font-semibold text-sm">Kotlin</p>
+        </div>
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">☕</div>
+          <p class="font-semibold text-sm">Java</p>
+        </div>
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">🔌</div>
+          <p class="font-semibold text-sm">C++</p>
+        </div>
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">🌐</div>
+          <p class="font-semibold text-sm">Python</p>
+        </div>
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold text-sm">Firebase</p>
+        </div>
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">📊</div>
+          <p class="font-semibold text-sm">SQLite</p>
+        </div>
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">🐳</div>
+          <p class="font-semibold text-sm">Docker</p>
+        </div>
+        <div class="text-center p-4 bg-dark/50 rounded-lg">
+          <div class="text-3xl mb-2">📡</div>
+          <p class="font-semibold text-sm">MQTT</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

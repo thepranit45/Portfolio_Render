@@ -1,0 +1,146 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Pranit Gopale — Home{% endblock %}
+
+{% block content %}
+<!-- Particle canvas (keep id same as your JS expects) -->
+<canvas id="particle-network"></canvas>
+
+<!-- Navigation moved into base.html (global header) -->
+
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+  <!-- animated blobs background -->
+  <div class="hero-blobs" aria-hidden="true"></div>
+
+  <div class="container mx-auto px-6 text-center z-10">
+    <div class="glass-hero">
+      <div class="mb-8">
+        <div class="profile-container mx-auto">
+          <div class="profile-glow"></div>
+          <img src="{% static 'portfolio/images/linkdin.png' %}" alt="Pranit Gopale" class="profile-image">
+        </div>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-bold mb-2">PRANIT <span style="color:var(--primary);">GOPALE</span></h1>
+
+      <div class="text-xl md:text-2xl mb-4 text-gray-300">
+        <span class="typing-text"></span>
+        <span class="cursor">|</span>
+      </div>
+
+      <p class="lead">🚀 Android & IoT Developer crafting next-generation digital experiences.</p>
+
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <a href="{% url 'portfolio:projects' %}" class="btn-primary">
+          <span>📂</span> View My Work
+        </a>
+        <a href="{% url 'portfolio:contact' %}" class="btn-secondary">
+          <span>💬</span> Get In Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats / Quick Info Section -->
+<section class="py-20 bg-dark/30">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div class="glass p-6 rounded-lg text-center stat-card">
+        <div class="text-4xl mb-3">⚡</div>
+        <h3 class="font-bold text-2xl text-primary mb-1">5+</h3>
+        <p class="text-gray-400">Years Experience</p>
+      </div>
+      <div class="glass p-6 rounded-lg text-center stat-card">
+        <div class="text-4xl mb-3">📱</div>
+        <h3 class="font-bold text-2xl text-primary mb-1">20+</h3>
+        <p class="text-gray-400">Projects Delivered</p>
+      </div>
+      <div class="glass p-6 rounded-lg text-center stat-card">
+        <div class="text-4xl mb-3">💼</div>
+        <h3 class="font-bold text-2xl text-primary mb-1">50+</h3>
+        <p class="text-gray-400">Happy Clients</p>
+      </div>
+      <div class="glass p-6 rounded-lg text-center stat-card">
+        <div class="text-4xl mb-3">🏆</div>
+        <h3 class="font-bold text-2xl text-primary mb-1">100%</h3>
+        <p class="text-gray-400">Commitment Quality</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="py-20 bg-dark/50 relative">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-2">🤝 Get In Touch</h2>
+    <p class="text-center text-gray-400 mb-16">Let's work together and create something amazing</p>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">
+            <span class="text-primary">→</span> Let's Connect
+          </h3>
+          <div class="space-y-4">
+            <p class="text-gray-400 flex items-start gap-3">
+              <span class="text-xl mt-1">💡</span>
+              <span>Always interested in new opportunities and collaborations</span>
+            </p>
+            <p class="text-gray-400 flex items-start gap-3">
+              <span class="text-xl mt-1">🎯</span>
+              <span>Love chatting about technology, innovation, and ideas</span>
+            </p>
+            <p class="text-gray-400 flex items-start gap-3">
+              <span class="text-xl mt-1">⚡</span>
+              <span>Quick response time and committed to quality work</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="glass p-6 rounded-2xl subtle-glow">
+          <form method="post" id="contact-form" class="space-y-6">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div>
+              {{ form.name.label_tag }}{{ form.name }}
+              {{ form.name.errors }}
+            </div>
+            <div>
+              {{ form.email.label_tag }}{{ form.email }}
+              {{ form.email.errors }}
+            </div>
+            <div>
+              {{ form.message.label_tag }}{{ form.message }}
+              {{ form.message.errors }}
+            </div>
+            <button type="submit" class="btn-primary w-full">
+              <span>✉️</span> Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-8 border-t border-gray-800">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+      <div class="text-center">
+        <div class="text-3xl mb-2">💼</div>
+        <p class="text-gray-400 text-sm">Professional Mobile Developer</p>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl mb-2">🚀</div>
+        <p class="text-gray-400 text-sm">Building Next-Gen Solutions</p>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl mb-2">🤝</div>
+        <p class="text-gray-400 text-sm">Open to Collaboration</p>
+      </div>
+    </div>
+    <div class="text-center border-t border-gray-700 pt-6">
+      <p class="text-gray-400">© 2025 Pranit Gopale. All rights reserved. <span class="text-primary">✨</span></p>
+    </div>
+  </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #6366F1;
+    --primary-dark: #4F46E5;
+    --accent: #10B981;
+    --dark: #0F0F15;
+    --darker: #09090F;
+    --light: #F8FAFC;
+    --gray: #6B7280;
+    --dark-gray: #374151;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--darker);
+    color: var(--light);
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* Custom Cursor */
+#cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+}
+
+#cursor-follower {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+/* Glass Morphism */
+.glass {
+    background: rgba(15, 15, 21, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle Glow */
+.subtle-glow {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+}
+
+/* Section Reveal Animation */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Magnetic Button Effect */
+.magnetic-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Particle Network */
+#particle-network {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Hologram Effect */
+.hologram {
+    position: relative;
+    overflow: hidden;
+}
+
+.hologram::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.03);
+    transform: rotate(30deg);
+    transition: all 0.6s;
+}
+
+.hologram:hover::after {
+    left: 120%;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+
+    #cursor, #cursor-follower {
+        display: none;
+    }
+}
+
+/* Profile Image Styling */
+.profile-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    filter: grayscale(0.2) contrast(1.1);
+    transition: all 0.5s ease;
+}
+
+.profile-image:hover {
+    filter: grayscale(0) contrast(1.2);
+    transform: scale(1.02);
+}
+
+.profile-glow {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary), transparent, var(--accent));
+    z-index: -1;
+    opacity: 0.3;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating animation */
+.floating {
+    animation: floatAnim 3s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}

@@ -1,0 +1,75 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Pranit Gopale — About{% endblock %}
+
+{% block content %}
+<section class="min-h-screen flex items-center py-20 pt-32">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="mb-8">👤 About Me</h1>
+      
+      <div class="glass p-8 rounded-2xl subtle-glow mb-8">
+        <div class="flex flex-col md:flex-row items-start gap-8">
+          <div class="flex-shrink-0">
+            <div class="profile-container" style="width: 150px; height: 150px;">
+              <div class="profile-glow"></div>
+              <img src="{% static 'portfolio/images/linkdin.png' %}" alt="Pranit" class="profile-image">
+            </div>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold mb-2">👨‍💻 Pranit Gopale</h2>
+            <p class="text-primary font-semibold text-lg mb-4">🎯 Android & IoT Developer</p>
+            <p class="text-gray-300 leading-relaxed">I'm passionate about building beautiful, performant mobile experiences and connected devices. With a background in Android development and IoT systems, I love bringing ideas to life through code and creating solutions that matter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="glass p-6 rounded-2xl subtle-glow">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span>🎓</span> Background
+          </h3>
+          <p class="text-gray-300 leading-relaxed">I specialize in end-to-end mobile development with a focus on Kotlin, Android SDK, and integrating hardware via Bluetooth and MQTT. I enjoy prototyping with microcontrollers and building full-stack demos that bridge software and hardware seamlessly.</p>
+        </div>
+
+        <div class="glass p-6 rounded-2xl subtle-glow">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span>⭐</span> Interests
+          </h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>✨ Mobile UX & performance optimization</li>
+            <li>⚙️ Embedded software & sensor integration</li>
+            <li>🔌 Real-time systems and IoT applications</li>
+            <li>🤝 Open-source collaboration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass p-6 rounded-2xl subtle-glow mb-8">
+        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+          <span>💭</span> Philosophy
+        </h3>
+        <p class="text-gray-300 leading-relaxed">I believe in writing clean, maintainable code and designing intuitive user experiences. Every project is an opportunity to learn something new and create meaningful impact through technology. I'm committed to collaboration, continuous learning, and pushing the boundaries of what's possible.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="glass p-4 rounded-lg text-center">
+          <div class="text-3xl mb-2">🏆</div>
+          <p class="font-semibold">Quality First</p>
+          <p class="text-gray-400 text-sm">Always delivering excellence</p>
+        </div>
+        <div class="glass p-4 rounded-lg text-center">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold">Fast Learner</p>
+          <p class="text-gray-400 text-sm">Adapting to new tech quickly</p>
+        </div>
+        <div class="glass p-4 rounded-lg text-center">
+          <div class="text-3xl mb-2">🎯</div>
+          <p class="font-semibold">Goal Oriented</p>
+          <p class="text-gray-400 text-sm">Results that matter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

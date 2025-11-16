@@ -1,0 +1,159 @@
+
+{% extends 'portfolio/base.html' %}
+
+{% block title %}{{ project.title }} — Projects{% endblock %}
+
+{% block content %}
+<main class="container py-12">
+  <a href="/projects/" class="text-sm text-indigo-400 mb-6 inline-block">← Back to projects</a>
+
+  <style>
+    /* Small, local styles to add polish without touching global CSS */
+    .pd-hero { background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(14,165,233,0.03)); border-radius: 18px; }
+    .chip { display:inline-block; padding:6px 10px; border-radius:999px; font-size:13px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03);} 
+    .tier { transition: transform .18s ease, box-shadow .18s ease; }
+    .tier:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.6); }
+    .popular { box-shadow: 0 10px 30px rgba(59,130,246,0.12); border: 1px solid rgba(99,102,241,0.18); }
+    .muted { color: #9ca3af; }
+    @media (max-width: 1024px) { .md-show-inline { display:block !important; } }
+  </style>
+
+  <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+    <!-- Main column -->
+    <div class="lg:col-span-2">
+      <div class="glass p-8 rounded-2xl subtle-glow relative overflow-hidden">
+        <!-- Decorative blob (uses existing css utilities) -->
+        <div class="absolute -right-24 -top-24 w-64 h-64 bg-gradient-to-tr from-primary/30 to-indigo-300 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+        <header class="mb-6">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div>
+              <h1 class="text-5xl lg:text-5xl font-extrabold mb-3">{{ project.title }}</h1>
+              <p class="text-gray-300 text-lg mb-4">{{ project.short }}</p>
+              <div class="flex flex-wrap gap-2 items-center">
+                <span class="chip">Education</span>
+                <span class="chip">PHP</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">XAMPP</span>
+              </div>
+            </div>
+
+            <!-- Screenshot / hero image placeholder (bigger and framed) -->
+            <div class="w-full lg:w-64 self-start lg:self-auto mt-4 lg:mt-0">
+              <div class="rounded-xl overflow-hidden border border-slate-700 shadow-xl bg-gradient-to-br from-slate-800/40 to-slate-900/30">
+                <svg width="100%" height="160" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" class="block">
+                  <defs>
+                    <linearGradient id="g2" x1="0" x2="1">
+                      <stop offset="0" stop-color="#0f172a" stop-opacity="0.6" />
+                      <stop offset="1" stop-color="#7c3aed" stop-opacity="0.45" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#g2)" />
+                  <g fill="#e0e7ff" font-family="sans-serif" font-size="14">
+                    <text x="16" y="34">Student Result System — Live Preview</text>
+                    <rect x="16" y="54" width="140" height="12" rx="4" fill="#94a3b8" opacity="0.15" />
+                    <rect x="16" y="76" width="220" height="10" rx="4" fill="#94a3b8" opacity="0.12" />
+                    <rect x="16" y="96" width="280" height="10" rx="4" fill="#94a3b8" opacity="0.08" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="mb-6">
+          <h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {% for f in project.features %}
+            <article class="p-4 bg-slate-800/30 rounded-lg border border-slate-700 transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">✅</div>
+                <div class="text-sm text-gray-200">{{ f }}</div>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <h2 class="text-2xl font-semibold mb-3">Modules</h2>
+          <ol class="list-decimal pl-6 space-y-2 text-gray-200">
+            {% for m in project.modules %}
+            <li>{{ m }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+
+        <div class="mt-6 flex gap-3 items-center">
+          <a href="{% url 'portfolio:contact' %}#contact" class="btn btn-primary">Get Started</a>
+          <a href="#" class="btn btn-secondary">Download ZIP</a>
+          <a href="#" class="ml-auto text-sm text-gray-400">Share ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="lg:col-span-1">
+      <div class="glass p-6 rounded-2xl subtle-glow">
+
+        <!-- Simplified pricing card with a single Buy CTA -->
+        <div class="mb-4">
+          <div class="rounded-xl overflow-hidden bg-gradient-to-br from-indigo-900/10 to-slate-900/6 border border-slate-700 p-4 shadow-md">
+            <div class="flex items-start gap-3">
+              <div class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-400 text-white rounded-lg">💳</div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4 class="text-lg font-semibold">Purchase</h4>
+                    <p class="text-xs muted mt-1">Everything declared here — one-click buy</p>
+                  </div>
+                </div>
+
+                <ul class="text-sm text-gray-300 mt-3 space-y-1">
+                  <li>• Admin & student interface</li>
+                  <li>• Automatic CGPA & result generation</li>
+                  <li>• PDF download/print</li>
+                </ul>
+
+                <div class="mt-3">
+                  <a href="{% url 'portfolio:contact' %}#contact" class="btn btn-primary w-full">Buy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold mb-3">Technologies</h3>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-800 rounded-full">💻</span>
+            <span class="text-sm">Frontend: {{ project.technologies.frontend }}</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-800 rounded-full">🖥️</span>
+            <span class="text-sm">Backend: {{ project.technologies.backend }}</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-800 rounded-full">🗄️</span>
+            <span class="text-sm">Database: {{ project.technologies.database }}</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-slate-800 rounded-full">🧰</span>
+            <span class="text-sm">Tools: {{ project.technologies.tools }}</span>
+          </li>
+        </ul>
+
+        <div class="border-t border-slate-700 pt-4">
+          <h4 class="text-sm font-medium text-gray-300 mb-2">Project Info</h4>
+          <dl class="text-sm text-gray-400 space-y-1">
+            <div><dt class="inline font-medium">Status:</dt> <dd class="inline">Prototype</dd></div>
+            <div><dt class="inline font-medium">License:</dt> <dd class="inline">MIT</dd></div>
+            <div><dt class="inline font-medium">Last update:</dt> <dd class="inline">2025-11-16</dd></div>
+          </dl>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+</main>
+{% endblock %}

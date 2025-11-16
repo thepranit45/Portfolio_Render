@@ -1,0 +1,51 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Student Result System — Project{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <a href="{% url 'portfolio:projects' %}" class="text-primary mb-6 inline-block">← Back to Projects</a>
+      <h1 class="text-4xl font-bold mb-4">Student Result System</h1>
+      <p class="text-gray-400 mb-6">A lightweight result management system allowing admins to manage students, subjects and marks; and students to view and download their results.</p>
+
+      <div class="glass p-6 rounded-2xl subtle-glow mb-6">
+        <h2 class="text-2xl font-semibold mb-3">⭐ Features (Short)</h2>
+        <ul class="list-disc list-inside text-gray-300 space-y-2">
+          <li>Admin login &amp; dashboard</li>
+          <li>Add/manage students &amp; subjects</li>
+          <li>Enter marks and generate results</li>
+          <li>Automatic CGPA, percentage &amp; pass/fail calculation</li>
+          <li>Students can view and download/print their results</li>
+          <li>Secure and user-friendly interface</li>
+        </ul>
+      </div>
+
+      <div class="glass p-6 rounded-2xl subtle-glow mb-6">
+        <h2 class="text-2xl font-semibold mb-3">💻 Technologies Used (Short)</h2>
+        <ul class="list-inside text-gray-300 space-y-2">
+          <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+          <li><strong>Backend:</strong> PHP</li>
+          <li><strong>Database:</strong> MySQL</li>
+          <li><strong>Tools:</strong> XAMPP/WAMP, phpMyAdmin</li>
+        </ul>
+      </div>
+
+      <div class="glass p-6 rounded-2xl subtle-glow mb-6">
+        <h2 class="text-2xl font-semibold mb-3">🔧 Modules (Short)</h2>
+        <ul class="list-inside text-gray-300 space-y-2">
+          <li><strong>Admin Module:</strong> Manage students, subjects, marks, results</li>
+          <li><strong>Student Module:</strong> View &amp; download result</li>
+          <li><strong>Result Module:</strong> CGPA, percentage, pass/fail processing</li>
+        </ul>
+      </div>
+
+      <div class="glass p-6 rounded-2xl subtle-glow">
+        <h3 class="text-xl font-semibold mb-3">Notes</h3>
+        <p class="text-gray-300">This implementation is typically deployed on a LAMP stack (XAMPP or WAMP locally). The PHP backend interacts with a MySQL database; admin operations are standard CRUD flows and results computation runs server-side for accuracy and security. For production, ensure proper authentication, input validation, HTTPS, and database backups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
