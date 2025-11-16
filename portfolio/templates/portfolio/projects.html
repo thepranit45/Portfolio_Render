@@ -27,6 +27,29 @@
           </div>
         </div>
       </a>
+      <!-- Info card: author + primary CTAs + socials -->
+      <div class="mt-6">
+        <div class="glass p-6 rounded-2xl subtle-glow flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <!-- Optional avatar can be added here if desired -->
+            <div>
+              <h3 class="text-lg font-semibold">Pranit Gopale</h3>
+              <p class="text-sm text-gray-400">Full‑stack developer — Student Result Management & web apps</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <a href="{% url 'portfolio:projects' %}" class="btn btn-primary">View my work</a>
+            <a href="{% url 'portfolio:contact' %}#contact" class="btn btn-secondary">Get in touch</a>
+          </div>
+
+          <div class="flex items-center gap-2 mt-3 md:mt-0">
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-blue-700 text-white text-sm">in</a>
+            <a href="https://github.com/your-profile" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gray-800 text-white text-sm">GH</a>
+            <a href="https://wa.me/your-number" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-green-600 text-white text-sm">WA</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
