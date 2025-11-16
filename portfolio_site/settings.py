@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import dj_database_url
+try:
+    import dj_database_url
+except Exception:
+    dj_database_url = None
 
 # load .env (if you use it)
 load_dotenv()
@@ -24,6 +27,7 @@ DEBUG = os.getenv("DEBUG", "True") == "True"
 
 # during dev you can use these hosts
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -75,10 +79,36 @@ WSGI_APPLICATION = 'portfolio_site.wsgi.application'
 # Database (sqlite for local dev)
 DATABASE_URL = os.getenv('DATABASE_URL')
 if DATABASE_URL:
-    # Parse DATABASE_URL (production, e.g. Render Postgres)
-    DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
-    }
+    # Prefer dj-database-url when available (clean parsing and extras)
+    if dj_database_url:
+        DATABASES = {
+            'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+        }
+    else:
+        # Minimal fallback parser for common postgres URLs when dj-database-url is not installed
+        from urllib.parse import urlparse, unquote
+
+        url = urlparse(DATABASE_URL)
+        # support postgres:// or postgresql://
+        if url.scheme.startswith('postgres') or url.scheme.startswith('postgresql'):
+            DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.postgresql',
+                    'NAME': unquote(url.path[1:]),
+                    'USER': unquote(url.username) if url.username else '',
+                    'PASSWORD': unquote(url.password) if url.password else '',
+                    'HOST': url.hostname or '',
+                    'PORT': url.port or '',
+                }
+            }
+        else:
+            # unknown scheme; fallback to sqlite to avoid crash in environments without dj-database-url
+            DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.sqlite3',
+                    'NAME': BASE_DIR / 'db.sqlite3',
+                }
+            }
 else:
     # Fallback to sqlite for local development
     DATABASES = {
