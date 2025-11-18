@@ -177,21 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---------- Mobile menu ----------
-  const mobileMenuBtn = safeQuery('#mobile-menu-btn');
-  const mobileMenu = safeQuery('#mobile-menu');
-  const closeMobileMenu = safeQuery('#close-mobile-menu');
-
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('translate-x-full');
-    });
-  }
-  if (closeMobileMenu && mobileMenu) {
-    closeMobileMenu.addEventListener('click', () => {
-      mobileMenu.classList.add('translate-x-full');
-    });
-  }
+  // Duplicate/legacy mobile menu handlers removed to avoid redeclaration and conflicting behavior.
 
   // ---------- Typing effect ----------
   const typingText = safeQuery('.typing-text');
