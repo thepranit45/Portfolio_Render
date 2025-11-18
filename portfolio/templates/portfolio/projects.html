@@ -4,50 +4,127 @@
 
 {% block content %}
 <section class="min-h-screen py-20 pt-32">
-  <div class="container mx-auto px-6">
-    <h1 class="mb-4">📂 Featured Project</h1>
-    <p class="text-gray-400 mb-12 text-lg">Student Result Management — click to view details</p>
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="text-center mb-12">
+      <h1 class="mb-4">📂 Featured Projects</h1>
+      <p class="text-gray-400 text-lg">Ready-to-use web applications — click to view details</p>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
-      <!-- Student Result System (whole card clickable) -->
-      <a href="{% url 'portfolio:project_detail' slug='student-result' %}" class="block no-underline">
-        <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale">
+    <div class="flex flex-col xl:flex-row gap-8 max-w-7xl mx-auto justify-center items-stretch">
+      <!-- Student Result System -->
+      <a href="{% url 'portfolio:project_detail' slug='student-result' %}" class="block no-underline flex-1 xl:max-w-md">
+        <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale relative h-full">
           <div class="mb-4 flex items-start justify-between">
             <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">Education</span>
-            <span class="text-3xl">🎓</span>
+            <div class="flex items-center gap-2">
+              <span class="text-3xl">🎓</span>
+              <!-- Technology icons -->
+              <div class="flex flex-col gap-2 ml-2">
+                <div class="flex items-center gap-2">
+                  <!-- PHP Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <path fill="#777BB4" d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .982-.122 1.292-.391.291-.27.391-.647.391-1.147 0-.286-.05-.52-.172-.712-.109-.202-.296-.398-.89-.398zm-2.72-3.157l-.353 1.82h1.228c.418 0 .725-.08.928-.235.203-.156.343-.39.343-.688 0-.244-.063-.418-.188-.522-.125-.104-.343-.156-.663-.156H4.291v.781zm12.524 1.271c-.188-.391-.453-.695-.796-.914-.296-.203-.671-.305-1.124-.305-.515 0-.969.109-1.36.328-.407.219-.719.531-.937.937-.203.391-.313.844-.313 1.36 0 .453.094.859.297 1.218.188.344.453.61.781.797.328.188.703.281 1.125.281.515 0 .969-.109 1.375-.328.391-.219.703-.531.906-.937.203-.391.313-.844.313-1.36 0-.453-.094-.859-.266-1.218l-.001-.159z"/>
+                  </svg>
+                  <!-- MySQL Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <path fill="#4479A1" d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.274.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H.082c.088-1.823.372-3.632.846-5.418h.985l1.334 4.064h.007l1.348-4.064h.943a49.02 49.02 0 01.225 5.418zm9.29-3.95c.312 0 .641.446.873.821.185.312.312.678.312 1.058 0 .312-.08.694-.312.939-.185.185-.446.272-.626.272-.312 0-.641-.446-.873-.821-.185-.312-.312-.678-.312-1.058 0-.312.08-.694.312-.939.185-.185.446-.272.626-.272zm-8.44-5.416c-.312 0-.641.446-.873.821-.185.312-.312.678-.312 1.058 0 .312.08.694.312.939.185.185.446.272.626.272.312 0 .641-.446.873-.821.185-.312.312-.678.312-1.058 0-.312-.08-.694-.312-.939-.185-.185-.446-.272-.626-.272z"/>
+                  </svg>
+                </div>
+                <div class="flex items-center gap-2">
+                  <!-- HTML5 Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <path fill="#E34F26" d="M3.345 21.601l1.47-16.5h14.37l-1.473 16.497L12.012 23l-8.667-1.399zM6.538 7.933l.18 2.013h8.564l-.18 2.013H9.88l.18 2.013h4.142l-.36 3.287-2.34.586-2.34-.586-.164-1.824H6.718l.36 3.899 4.326 1.175v.016l4.343-1.191L16.538 7.933H6.538z"/>
+                  </svg>
+                  <!-- JavaScript Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <path fill="#F7DF1E" d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.11-.403.597-.552.986-.428.398.097.772.325 1.011.854 1.005-.653.656-.99.656-.99-.201-.315-.315-.445-.636-.671-.988-.788-2.357-.829-3.134.164-.314.389-.444.854-.454 1.234.002.639.173 1.148.548 1.565.287.334.708.573 1.089.705.382.131.676.246.676.586 0 .334-.308.479-.708.479-1.148 0-1.582-.731-1.818-1.065l-1.036.634c.462.934 1.405 1.328 2.854 1.328 1.618 0 2.624-.676 2.624-1.854 0-.551-.213-.982-.563-1.309z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
           <h3 class="text-2xl font-semibold mb-2">Student Result System</h3>
           <p class="text-gray-300 mb-4 leading-relaxed text-sm">A result management system with admin dashboard, marks entry, automatic CGPA calculation and student result downloads.</p>
           <div class="flex items-center justify-between pt-4 border-t border-gray-700">
             <div class="text-xs text-gray-400 space-y-1">
               <p>🔧 <span>PHP • MySQL</span></p>
-              <p>🛠️ <span>XAMPP/WAMP</span></p>
+              <p>💰 <span>₹999</span></p>
             </div>
             <span class="text-primary font-semibold group-hover:translate-x-1 transition-transform text-xl">→</span>
           </div>
         </div>
       </a>
-      <!-- Info card: author + primary CTAs + socials -->
-      <div class="mt-6">
-        <div class="glass p-6 rounded-2xl subtle-glow flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <!-- Optional avatar can be added here if desired -->
-            <div>
-              <h3 class="text-lg font-semibold">Pranit Gopale</h3>
-              <p class="text-sm text-gray-400">Full‑stack developer — Student Result Management & web apps</p>
+
+      <!-- Attendance Management System -->
+      <a href="{% url 'portfolio:project_attendance_management' %}" class="block no-underline flex-1 xl:max-w-md">
+        <div class="glass p-6 rounded-2xl subtle-glow group overflow-hidden hover-scale relative h-full">
+          <div class="mb-4 flex items-start justify-between">
+            <span class="inline-block px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold">Management</span>
+            <div class="flex items-center gap-2">
+              <span class="text-3xl">📋</span>
+              <!-- Technology icons -->
+              <div class="flex flex-col gap-2 ml-2">
+                <div class="flex items-center gap-2">
+                  <!-- PHP Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <path fill="#777BB4" d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .982-.122 1.292-.391.291-.27.391-.647.391-1.147 0-.286-.05-.52-.172-.712-.109-.202-.296-.398-.89-.398zm-2.72-3.157l-.353 1.82h1.228c.418 0 .725-.08.928-.235.203-.156.343-.39.343-.688 0-.244-.063-.418-.188-.522-.125-.104-.343-.156-.663-.156H4.291v.781zm12.524 1.271c-.188-.391-.453-.695-.796-.914-.296-.203-.671-.305-1.124-.305-.515 0-.969.109-1.36.328-.407.219-.719.531-.937.937-.203.391-.313.844-.313 1.36 0 .453.094.859.297 1.218.188.344.453.61.781.797.328.188.703.281 1.125.281.515 0 .969-.109 1.375-.328.391-.219.703-.531.906-.937.203-.391.313-.844.313-1.36 0-.453-.094-.859-.266-1.218l-.001-.159z"/>
+                  </svg>
+                  <!-- PostgreSQL Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <path fill="#336791" d="M17.128 0C15.624 0 14.496.672 13.728 2.016c-.768 1.344-1.056 3.072-1.056 4.896 0 1.344.192 2.688.576 3.936.384 1.248.96 2.4 1.728 3.36l.288.288c.384.384.768.672 1.248.864.48.192 1.056.288 1.632.288 1.056 0 1.92-.288 2.592-.864.672-.576 1.008-1.344 1.008-2.304 0-.576-.144-1.056-.432-1.44-.288-.384-.672-.576-1.152-.576-.384 0-.72.096-.96.288-.24.192-.36.48-.36.864 0 .288.096.528.288.72.192.192.432.288.72.288.192 0 .384-.048.576-.144l.144.384c-.288.144-.624.216-1.008.216-.576 0-1.056-.192-1.44-.576-.384-.384-.576-.864-.576-1.44 0-.672.24-1.248.72-1.728.48-.48 1.104-.72 1.872-.72.864 0 1.536.288 2.016.864.48.576.72 1.296.72 2.16 0 1.152-.384 2.064-1.152 2.736-.768.672-1.824 1.008-3.168 1.008-.72 0-1.392-.144-2.016-.432-.624-.288-1.152-.672-1.584-1.152l-.288-.288c-.672-.864-1.2-1.872-1.584-3.024-.384-1.152-.576-2.352-.576-3.6 0-1.632.24-3.168.72-4.608.48-1.44 1.2-2.592 2.16-3.456C15.936.576 16.512 0 17.128 0z"/>
+                  </svg>
+                </div>
+                <div class="flex items-center gap-2">
+                  <!-- Bootstrap Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <path fill="#7952B3" d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572z"/>
+                    <path fill="#7952B3" d="M21.996 12c0 5.514-4.486 10-9.996 10-5.514 0-10-4.486-10-10C2 6.486 6.486 2 12 2c5.51 0 9.996 4.486 9.996 10zM11.77 13.955h2.42c1.402 0 2.24.695 2.24 1.717 0 1.113-.774 1.936-2.24 1.936H9.956v-2.909h1.814v-.744zm2.42-7.724H6.824v11.538h7.366c2.420 0 3.896-1.445 3.896-3.650 0-1.381-.774-2.42-1.834-2.953v-.087c.87-.426 1.402-1.315 1.402-2.42 0-2.065-1.402-3.428-3.464-3.428z"/>
+                  </svg>
+                  <!-- Chart.js Logo -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="tech-logo sm:w-7 sm:h-7">
+                    <rect x="3" y="14" width="3" height="7" fill="#FF6384"/>
+                    <rect x="8" y="10" width="3" height="11" fill="#36A2EB"/>
+                    <rect x="13" y="6" width="3" height="15" fill="#FFCE56"/>
+                    <rect x="18" y="8" width="3" height="13" fill="#4BC0C0"/>
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
+          <h3 class="text-2xl font-semibold mb-2">Attendance Management System</h3>
+          <p class="text-gray-300 mb-4 leading-relaxed text-sm">Comprehensive attendance tracking with real-time monitoring, analytics dashboard, and automated reporting features.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+            <div class="text-xs text-gray-400 space-y-1">
+              <p>🔧 <span>PHP • PostgreSQL • Chart.js</span></p>
+              <p>💰 <span>₹1,499</span></p>
+            </div>
+            <span class="text-green-400 font-semibold group-hover:translate-x-1 transition-transform text-xl">→</span>
+          </div>
+        </div>
+      </a>
+    </div>
 
+    <!-- Info card: author + primary CTAs + socials -->
+    <div class="mt-8">
+      <div class="glass p-6 rounded-2xl subtle-glow flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div>
+            <h3 class="text-lg font-semibold">Pranit Gopale</h3>
+            <p class="text-sm text-gray-400">Full‑stack developer — Educational & Management Systems</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-4">
           <div class="flex items-center gap-3">
             <!-- Primary CTAs: View my work -> GitHub, Get in touch -> WhatsApp -->
             <a href="https://github.com/thepranit45" target="_blank" rel="noopener" class="btn btn-primary">View my work</a>
-            <a href="https://wa.me/9970343289" target="_blank" rel="noopener" class="btn btn-secondary">Get in touch</a>
+            <a href="https://wa.me/9970343404" target="_blank" rel="noopener" class="btn btn-secondary">Get in touch</a>
           </div>
 
-          <div class="flex items-center gap-2 mt-3 md:mt-0">
-            <a href="https://in.linkedin.com/in/thepranit" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-blue-700 text-white text-sm" aria-label="LinkedIn">in</a>
+          <div class="flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/thepranit" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-blue-700 text-white text-sm" aria-label="LinkedIn">in</a>
             <a href="https://github.com/thepranit45" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gray-800 text-white text-sm" aria-label="GitHub">GH</a>
-            <a href="https://wa.me/9970343289" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-green-600 text-white text-sm" aria-label="WhatsApp">WA</a>
+            <a href="https://wa.me/9970343404" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-green-600 text-white text-sm" aria-label="WhatsApp">WA</a>
           </div>
         </div>
       </div>

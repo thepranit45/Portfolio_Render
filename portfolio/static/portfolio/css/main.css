@@ -11,6 +11,436 @@
     --dark-gray: #374151;
 }
 
+/* Modern Navbar Styles */
+.nav-link {
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #a855f7, #ec4899);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Advanced Home Page Animations */
+
+/* Blob animations for background */
+@keyframes blob {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Floating technology animations */
+@keyframes float-slow {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translateY(-15px) rotate(5deg);
+        opacity: 1;
+    }
+}
+
+@keyframes float-medium {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: translateY(-20px) rotate(-3deg);
+        opacity: 1;
+    }
+}
+
+@keyframes float-fast {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% { 
+        transform: translateY(-25px) rotate(7deg);
+        opacity: 1;
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+    animation: float-medium 4s ease-in-out infinite;
+}
+
+.animate-float-fast {
+    animation: float-fast 3s ease-in-out infinite;
+}
+
+/* Floating tech rings with orbital movement */
+@keyframes orbit {
+    0% { 
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% { 
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+.floating-tech-ring {
+    animation: orbit linear infinite;
+}
+
+.floating-tech-ring[data-speed="1.5"] {
+    animation-duration: 20s;
+}
+
+.floating-tech-ring[data-speed="2"] {
+    animation-duration: 15s;
+}
+
+.floating-tech-ring[data-speed="2.5"] {
+    animation-duration: 12s;
+}
+
+.floating-tech-ring[data-speed="3"] {
+    animation-duration: 10s;
+}
+
+.floating-tech-ring[data-speed="1.8"] {
+    animation-duration: 18s;
+}
+
+/* Tech bubble hover effects */
+.tech-bubble {
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-bubble::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.tech-bubble:hover::before {
+    left: 100%;
+}
+
+/* SVG path drawing animations */
+@keyframes draw {
+    0% { 
+        stroke-dasharray: 0 1000;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% { 
+        stroke-dasharray: 1000 0;
+        opacity: 0.5;
+    }
+}
+
+.animate-draw {
+    animation: draw 8s ease-in-out infinite;
+}
+
+.animate-draw-delay {
+    animation: draw 8s ease-in-out infinite 2s;
+}
+
+.animate-draw-delay-2 {
+    animation: draw 8s ease-in-out infinite 4s;
+}
+
+/* Tech icon floating animations */
+.tech-icon {
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* Gradient text clip utility */
+.bg-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* Enhanced button styles */
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+/* Connecting lines container */
+.connecting-lines {
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+}
+
+/* Interactive dashboard mock */
+.dashboard-mock {
+    background: linear-gradient(135deg, 
+        rgba(30, 30, 60, 0.8), 
+        rgba(60, 30, 90, 0.6));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .glass-hero { 
+        margin: 2rem 1rem; 
+        padding: 1.5rem; 
+        border-radius: 18px; 
+    }
+    .glass-hero h1 { 
+        font-size: 1.875rem; 
+        line-height: 2.25rem;
+    }
+    .glass-hero h2 { 
+        font-size: 1.25rem; 
+    }
+    .glass-hero .profile-container {
+        margin-bottom: 1.5rem;
+    }
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    .profile-glow {
+        width: 120px;
+        height: 120px;
+    }
+    .floating-tech-ring {
+        position: relative !important;
+        animation: none;
+        margin: 10px;
+        display: inline-block;
+    }
+    
+    .tech-bubble {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .tech-icon {
+        position: relative !important;
+        margin: 5px;
+        display: inline-block;
+    }
+}
+
+/* Advanced Logo Animations */
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes float-1 {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.6;
+    }
+    25% { 
+        transform: translateY(-4px) translateX(2px);
+        opacity: 1;
+    }
+    75% { 
+        transform: translateY(2px) translateX(-1px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes float-2 {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.7;
+    }
+    33% { 
+        transform: translateY(3px) translateX(-2px);
+        opacity: 1;
+    }
+    66% { 
+        transform: translateY(-2px) translateX(1px);
+        opacity: 0.5;
+    }
+}
+
+@keyframes float-3 {
+    0%, 100% { 
+        transform: translateY(0px) scale(1);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translateY(-3px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes logo-morph {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    25% { 
+        transform: scale(1.05) rotate(90deg);
+        filter: hue-rotate(90deg);
+    }
+    50% { 
+        transform: scale(0.95) rotate(180deg);
+        filter: hue-rotate(180deg);
+    }
+    75% { 
+        transform: scale(1.02) rotate(270deg);
+        filter: hue-rotate(270deg);
+    }
+}
+
+/* Logo path animations */
+.logo-path-1 {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw-line 3s ease-in-out infinite;
+}
+
+.logo-path-2 {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+.logo-dot {
+    animation: dot-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes draw-line {
+    0%, 20% { stroke-dashoffset: 100; }
+    50%, 80% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -100; }
+}
+
+@keyframes pulse-glow {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes dot-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.5); opacity: 1; }
+}
+
+/* Logo wrapper hover effects */
+.logo-wrapper:hover .logo-path-1 {
+    animation-duration: 1s;
+}
+
+.logo-wrapper:hover svg {
+    animation: logo-morph 4s ease-in-out infinite;
+}
+
+/* Utility classes for animations */
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-float-1 {
+    animation: float-1 3s ease-in-out infinite;
+}
+
+.animate-float-2 {
+    animation: float-2 4s ease-in-out infinite 0.5s;
+}
+
+.animate-float-3 {
+    animation: float-3 2.5s ease-in-out infinite 1s;
+}
+
+.animate-blink {
+    animation: blink 1.2s step-end infinite;
+}
+
+/* Advanced gradient text effects */
+.bg-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* Glass morphism effects */
+.logo-container {
+    position: relative;
+}
+
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.1), transparent, rgba(236, 72, 153, 0.1), transparent);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.logo-container:hover::before {
+    opacity: 1;
+    animation: spin-slow 6s linear infinite;
+}
+
+/* Enhanced gradient overlay for navbar */
+nav {
+    background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.15) 0%, 
+        rgba(236, 72, 153, 0.15) 35%, 
+        rgba(59, 130, 246, 0.15) 100%);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(139, 92, 246, 0.1);
+}
+
 /* Light / White theme overrides */
 body.light-theme {
     --darker: #f5f7fb; /* soft off-white background */
@@ -24,8 +454,12 @@ body.light-theme {
 }
 
 body.light-theme nav {
-    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(248, 250, 252, 0.9) 35%, 
+        rgba(255, 255, 255, 0.95) 100%);
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    backdrop-filter: blur(16px);
 }
 
 body.light-theme nav a {
@@ -374,6 +808,31 @@ section h3 {
     .glass-hero { margin: 4rem 1.5rem; padding: 2rem; border-radius: 18px; }
     .glass-hero h1 { font-size: 2rem; }
     .glass-hero h2 { font-size: 1.4rem; }
+    
+    /* Mobile container spacing */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Mobile section padding */
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Mobile project cards */
+    .glass {
+        margin: 0.5rem 0;
+        padding: 1rem !important;
+    }
+    
+    /* Mobile button sizing */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-height: 44px;
+    }
 }
 
 /* Hero CTA container styling */
@@ -425,9 +884,56 @@ section h3 {
 .btn-secondary:hover { background: rgba(0,208,132,0.06); color: #dffbf0; }
 
 @media (max-width: 640px) {
-    .cta-box { padding: 12px 14px; }
-    .cta-inner { gap: 12px; flex-direction:column; }
-    .btn-primary, .btn-secondary { width: 100%; text-align:center; }
+    .cta-box { 
+        padding: 12px 14px; 
+        width: 95%;
+    }
+    .cta-inner { 
+        gap: 12px; 
+        flex-direction: column; 
+    }
+    .btn-primary, .btn-secondary { 
+        width: 100%; 
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 0.875rem;
+    }
+    
+    /* Better touch targets for mobile */
+    .btn {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    /* Mobile form inputs */
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px 16px;
+        border-radius: 8px;
+    }
+    
+    /* Mobile glass cards */
+    .glass {
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Mobile stats grid */
+    .stat-card {
+        min-height: 120px;
+    }
+    
+    /* Mobile navigation fixes */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Mobile typography improvements */
+    h1 { font-size: 1.875rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.25rem !important; }
+    p { font-size: 0.875rem; line-height: 1.4; }
 }
 
 /* Hologram Effect */
@@ -702,9 +1208,43 @@ a:hover::after {
     box-shadow: 0 20px 40px rgba(9, 181, 138, 0.2);
 }
 @media (max-width: 768px) {
-    section h1 { font-size: 2rem; }
-    section h2 { font-size: 1.5rem; }
-    section h3 { font-size: 1.1rem; }
+    section h1 { font-size: 1.875rem; }
+    section h2 { font-size: 1.375rem; }
+    section h3 { font-size: 1.125rem; }
+    
+    /* Mobile spacing improvements */
+    .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .py-16 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    
+    /* Mobile grid improvements */
+    .grid {
+        gap: 1rem;
+    }
+    
+    /* Mobile text sizing */
+    .text-lg {
+        font-size: 1rem;
+    }
+    
+    .text-xl {
+        font-size: 1.125rem;
+    }
+    
+    /* Mobile card improvements */
+    .rounded-2xl {
+        border-radius: 1rem;
+    }
+    
+    .rounded-xl {
+        border-radius: 0.75rem;
+    }
 }
 
 /* Tech-logo rendering helpers */

@@ -37,7 +37,7 @@ class PaymentForm(forms.ModelForm):
             }),
             'customer_phone': forms.TextInput(attrs={
                 'class': 'w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent',
-                'placeholder': '+91 9876543210'
+                'placeholder': '+91 9970343404'
             }),
             'description': forms.Textarea(attrs={
                 'class': 'w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent',

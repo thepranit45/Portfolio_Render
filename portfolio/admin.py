@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, PaymentOrder, Payment, Service
+from .models import Contact, PaymentOrder, Payment, Service, Project
 
 
 @admin.register(Contact)
@@ -7,6 +7,31 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('name','email','created_at','responded')
     list_filter = ('responded','created_at')
     search_fields = ('name','email','message')
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('title', 'category', 'status', 'is_featured', 'is_published', 'display_order', 'created_at')
+    list_filter = ('category', 'status', 'is_featured', 'is_published', 'created_at')
+    search_fields = ('title', 'description', 'technologies')
+    list_editable = ('is_featured', 'is_published', 'display_order')
+    prepopulated_fields = {'slug': ('title',)}
+    ordering = ('display_order', '-created_at')
+    
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('title', 'slug', 'short_description', 'description')
+        }),
+        ('Project Details', {
+            'fields': ('category', 'status', 'technologies')
+        }),
+        ('Media & Links', {
+            'fields': ('image', 'demo_url', 'github_url')
+        }),
+        ('Display Options', {
+            'fields': ('is_featured', 'is_published', 'display_order')
+        }),
+    )
 
 
 @admin.register(Service)

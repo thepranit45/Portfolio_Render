@@ -9,7 +9,7 @@
       <h1 class="mb-8">💼 Our Services</h1>
       <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
         Professional development services tailored to your needs. 
-        Choose from our range of offerings and get started with secure online payments.
+        Click on any service to connect with us via WhatsApp for instant communication and personalized assistance.
       </p>
     </div>
 
@@ -44,9 +44,17 @@
               <h3 class="text-2xl font-bold mb-4 text-center text-white">{{ service.name }}</h3>
               
               <div class="mb-6">
-                <p class="text-gray-300 text-center leading-relaxed">
+                <p class="text-gray-300 text-center leading-relaxed mb-4">
                   {{ service.description }}
                 </p>
+                
+                <!-- Pricing Terms Notice -->
+                <div class="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-400/40 rounded-lg p-3 mb-4">
+                  <p class="text-yellow-200 text-xs text-center leading-relaxed">
+                    <span class="font-semibold text-yellow-300">� Basic Price:</span> This covers standard implementation. 
+                    Additional features or custom requirements will incur extra charges.
+                  </p>
+                </div>
               </div>
 
               <!-- Duration -->
@@ -62,14 +70,15 @@
                 <div class="text-4xl font-bold text-primary mb-2">
                   ₹{{ service.price }}
                 </div>
-                <p class="text-gray-400 text-sm">One-time payment</p>
+                <p class="text-gray-400 text-sm">Basic package price</p>
               </div>
 
               <!-- CTA Button -->
               <div class="text-center">
-                <a href="{% url 'portfolio:create_payment' service.id %}" 
+                <a href="https://wa.me/9970343289?text=Hi%20Pranit,%20I%20want%20to%20purchase%20the%20{{ service.name|urlencode }}%20service%20for%20₹{{ service.price }}.%20Please%20provide%20me%20with%20the%20details%20and%20next%20steps." 
+                   target="_blank" rel="noopener"
                    class="btn-primary w-full justify-center">
-                  <span>�</span> Buy Now with Razorpay
+                  <span>💬</span> Buy via WhatsApp
                 </a>
               </div>
 
@@ -97,16 +106,16 @@
         
         <div class="grid md:grid-cols-3 gap-8">
           <div class="text-center">
-            <div class="text-4xl mb-4">🔒</div>
-            <h4 class="font-semibold mb-2 text-green-400">Razorpay Secured</h4>
+            <div class="text-4xl mb-4">�</div>
+            <h4 class="font-semibold mb-2 text-green-400">Direct Communication</h4>
             <p class="text-gray-400 text-sm">
-              All payments processed securely through Razorpay with industry-standard encryption
+              Instant communication via WhatsApp for quick clarifications and real-time updates
             </p>
           </div>
           
           <div class="text-center">
             <div class="text-4xl mb-4">⚡</div>
-            <h4 class="font-semibold mb-2 text-blue-400">Fast Delivery</h4>
+            <h4 class="font-semibold mb-2 text-blue-400">Fast Response</h4>
             <p class="text-gray-400 text-sm">
               Quick turnaround times with regular progress updates throughout the project
             </p>
@@ -122,44 +131,114 @@
         </div>
       </div>
 
-      <!-- Payment Methods -->
-      <div class="mt-12 bg-blue-900/20 border border-blue-500/30 p-8 rounded-2xl">
-        <h3 class="text-xl font-bold mb-6 text-blue-400 text-center flex items-center justify-center gap-3">
-          <span>💳</span> Secure Payment with Razorpay
+      <!-- Purchase Process -->
+      <div class="mt-12 bg-green-900/20 border border-green-500/30 p-8 rounded-2xl">
+        <h3 class="text-xl font-bold mb-6 text-green-400 text-center flex items-center justify-center gap-3">
+          <span>�</span> Easy Purchase via WhatsApp
         </h3>
         
         <div class="text-center mb-6">
           <div class="inline-flex items-center gap-3 bg-slate-800/50 px-6 py-3 rounded-lg">
-            <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" class="h-6" style="filter: brightness(0) invert(1);">
-            <span class="text-white font-semibold">Powered by Razorpay</span>
+            <div class="text-2xl">📱</div>
+            <span class="text-white font-semibold">Direct WhatsApp Communication</span>
           </div>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
           <div class="bg-slate-800/30 p-4 rounded-lg">
-            <div class="text-2xl mb-2">💳</div>
-            <p class="text-sm text-gray-300">Credit/Debit Cards</p>
+            <div class="text-2xl mb-2">�</div>
+            <p class="text-sm text-gray-300">Click Buy Button</p>
           </div>
           
           <div class="bg-slate-800/30 p-4 rounded-lg">
-            <div class="text-2xl mb-2">🏦</div>
-            <p class="text-sm text-gray-300">Net Banking</p>
+            <div class="text-2xl mb-2">📞</div>
+            <p class="text-sm text-gray-300">WhatsApp Opens</p>
           </div>
           
           <div class="bg-slate-800/30 p-4 rounded-lg">
-            <div class="text-2xl mb-2">📱</div>
-            <p class="text-sm text-gray-300">UPI Payments</p>
+            <div class="text-2xl mb-2">�</div>
+            <p class="text-sm text-gray-300">Discuss Requirements</p>
           </div>
           
           <div class="bg-slate-800/30 p-4 rounded-lg">
-            <div class="text-2xl mb-2">👛</div>
-            <p class="text-sm text-gray-300">Digital Wallets</p>
+            <div class="text-2xl mb-2">✅</div>
+            <p class="text-sm text-gray-300">Proceed with Payment</p>
           </div>
         </div>
         
         <p class="text-center text-gray-400 text-sm mt-6">
-          🔐 All transactions are secured by Razorpay's PCI DSS compliant infrastructure
+          � Get instant responses and personalized service through direct communication
         </p>
+      </div>
+
+      <!-- Pricing Terms & Conditions -->
+      <div class="mt-12 bg-orange-900/20 border border-orange-500/30 p-8 rounded-2xl">
+        <h3 class="text-xl font-bold mb-6 text-orange-400 text-center flex items-center justify-center gap-3">
+          <span>📋</span> Pricing Terms & Conditions
+        </h3>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold mb-3 text-yellow-400 flex items-center gap-2">
+              <span>💡</span> Basic Package Includes
+            </h4>
+            <ul class="text-gray-300 text-sm space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 mt-0.5">✓</span>
+                <span>Standard implementation as described</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 mt-0.5">✓</span>
+                <span>Basic functionality and features</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 mt-0.5">✓</span>
+                <span>Standard delivery timeline</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-400 mt-0.5">✓</span>
+                <span>Post-delivery support (7 days)</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold mb-3 text-red-400 flex items-center gap-2">
+              <span>⚡</span> Additional Charges Apply For
+            </h4>
+            <ul class="text-gray-300 text-sm space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-red-400 mt-0.5">+</span>
+                <span>Custom features beyond basic scope</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-400 mt-0.5">+</span>
+                <span>Advanced integrations or APIs</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-400 mt-0.5">+</span>
+                <span>Rush delivery requests</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-400 mt-0.5">+</span>
+                <span>Extended support beyond 7 days</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-400 mt-0.5">+</span>
+                <span>Major design or functionality changes</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-6 bg-green-900/30 border border-green-500/20 rounded-lg p-4">
+          <p class="text-green-300 text-sm text-center">
+            <span class="font-semibold">� Get Custom Quote:</span> 
+            For projects requiring additional features or modifications, 
+            <a href="https://wa.me/9970343289?text=Hi%20Pranit,%20I%20need%20a%20custom%20quote%20for%20a%20project.%20Let%27s%20discuss%20the%20requirements." target="_blank" rel="noopener" class="text-green-400 hover:text-green-300 underline">message us on WhatsApp</a> 
+            for instant discussion and detailed quote.
+          </p>
+        </div>
       </div>
 
     </div>

@@ -1,0 +1,249 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Attendance Management System — Project{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32">
+  <div class="container mx-auto px-6">
+    <div class="max-w-7xl mx-auto">
+      <a href="{% url 'portfolio:projects' %}" class="text-primary mb-6 inline-block">← Back to Projects</a>
+      
+      <!-- Horizontal Layout: Main content + Sidebar -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Main Content (Left Side) -->
+        <div class="lg:col-span-2 space-y-6">
+          <div>
+            <h1 class="text-4xl font-bold mb-4">Attendance Management System</h1>
+            <p class="text-gray-400 mb-6">A web-based attendance tracking system designed to replace manual registers, allowing admins to manage users and teachers to mark and generate real-time student attendance reports.</p>
+          </div>
+
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h2 class="text-2xl font-semibold mb-3">⭐ Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Student/Employee Registration</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Real-time Attendance Tracking</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Multiple Attendance Methods</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Comprehensive Reports</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Analytics Dashboard</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Multi-user Role Management</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Export to Excel/PDF</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>SMS/Email Notifications</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h2 class="text-2xl font-semibold mb-3">🔧 Modules</h2>
+            <div class="space-y-3">
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Admin Module</h3>
+                <p class="text-gray-300 text-sm">Complete system administration, user management, class/department setup, and system configuration.</p>
+              </div>
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Teacher/HR Module</h3>
+                <p class="text-gray-300 text-sm">Mark attendance, view class reports, generate attendance sheets, and manage student/employee data.</p>
+              </div>
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Student/Employee Module</h3>
+                <p class="text-gray-300 text-sm">View personal attendance records, monthly reports, and download attendance certificates.</p>
+              </div>
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Reports Module</h3>
+                <p class="text-gray-300 text-sm">Detailed analytics, attendance trends, defaulter reports, and customizable reporting tools.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h2 class="text-2xl font-semibold mb-3">🚀 Advanced Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-4 bg-gradient-to-br from-blue-900/20 to-blue-800/10 rounded-lg border border-blue-500/20">
+                <h4 class="font-semibold text-blue-300 mb-2">📊 Analytics Dashboard</h4>
+                <p class="text-gray-400 text-sm">Interactive charts and graphs showing attendance trends, patterns, and insights.</p>
+              </div>
+              <div class="p-4 bg-gradient-to-br from-green-900/20 to-green-800/10 rounded-lg border border-green-500/20">
+                <h4 class="font-semibold text-green-300 mb-2">📱 Mobile Responsive</h4>
+                <p class="text-gray-400 text-sm">Fully responsive design that works perfectly on all devices and screen sizes.</p>
+              </div>
+              <div class="p-4 bg-gradient-to-br from-purple-900/20 to-purple-800/10 rounded-lg border border-purple-500/20">
+                <h4 class="font-semibold text-purple-300 mb-2">🔔 Smart Notifications</h4>
+                <p class="text-gray-400 text-sm">Automated SMS and email alerts for attendance, absences, and important updates.</p>
+              </div>
+              <div class="p-4 bg-gradient-to-br from-orange-900/20 to-orange-800/10 rounded-lg border border-orange-500/20">
+                <h4 class="font-semibold text-orange-300 mb-2">📄 Export Options</h4>
+                <p class="text-gray-400 text-sm">Export attendance data to Excel, PDF, and CSV formats with custom date ranges.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar (Right Side) -->
+        <div class="lg:col-span-1 space-y-6">
+          
+          <!-- Purchase Section -->
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h2 class="text-xl font-semibold mb-4 text-center">💰 Purchase</h2>
+            <div class="bg-gradient-to-br from-indigo-900/20 to-slate-900/10 border border-indigo-500/20 rounded-xl p-4">
+              <div class="text-center mb-4">
+                <h3 class="text-lg font-semibold text-white">Complete Source Code</h3>
+                <p class="text-gray-300 text-xs">Full attendance management system</p>
+                <div class="mt-3">
+                  <div class="text-2xl font-bold text-primary">₹1,499</div>
+                  <div class="text-sm text-gray-400 line-through">₹2,999</div>
+                </div>
+              </div>
+              
+              <ul class="text-xs text-gray-300 space-y-2 mb-4">
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✓</span>
+                  Complete PHP source code
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✓</span>
+                  MySQL database with sample data
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✅</span>
+                  Complete PHP Source Code
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✅</span>
+                  PostgreSQL Database Schema (SQL)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✅</span>
+                  Project Report & Documentation
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✅</span>
+                  Installation Support
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✅</span>
+                  Lifetime Updates
+                </li>
+              </ul>
+
+              <a href="https://wa.me/9970343289?text=Hi%20Pranit,%20I%20want%20to%20purchase%20the%20Attendance%20Management%20System%20for%20₹1,499.%20Please%20provide%20me%20with%20the%20payment%20details%20and%20source%20code%20delivery%20process." 
+                 target="_blank" rel="noopener"
+                 class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-green-600 hover:to-green-500 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm block text-center">
+                💬 Buy via WhatsApp
+              </a>
+
+              <a href="{% static 'portfolio/documents/student-attendance-system.pdf' %}" download="Student-Attendance-System.pdf"
+                 class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-blue-600 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm block text-center mt-3">
+                📄 Download Documentation
+              </a>
+              
+              <div class="flex items-center justify-center gap-3 mt-3 text-xs text-gray-500">
+                <span>💬 Direct Chat</span>
+                <span>⚡ Instant Response</span>
+                <span>🔒 Secure</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technologies -->
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h3 class="text-lg font-semibold mb-4">💻 Technologies</h3>
+            <div class="grid grid-cols-1 gap-4">
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h4 class="font-semibold text-blue-400 mb-2">Frontend</h4>
+                <p class="text-gray-300 text-sm">HTML, CSS</p>
+              </div>
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h4 class="font-semibold text-green-400 mb-2">Backend</h4>
+                <p class="text-gray-300 text-sm">PHP</p>
+              </div>
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h4 class="font-semibold text-purple-400 mb-2">Database</h4>
+                <p class="text-gray-300 text-sm">PostgreSQL</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- System Requirements -->
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h3 class="text-lg font-semibold mb-4">⚙️ System Requirements</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-400">Server:</span>
+                <span>Apache/Nginx</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">PHP:</span>
+                <span>7.4+ or 8.0+</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Database:</span>
+                <span>MySQL 5.7+</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Browser:</span>
+                <span>Modern browsers</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Storage:</span>
+                <span>50MB minimum</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Info -->
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h3 class="text-lg font-semibold mb-4">📋 Project Info</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-400">Status:</span>
+                <span class="text-green-400">Ready</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Category:</span>
+                <span>Educational Management</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Updated:</span>
+                <span>Nov 2025</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Version:</span>
+                <span>v2.1</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">License:</span>
+                <span>Commercial</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

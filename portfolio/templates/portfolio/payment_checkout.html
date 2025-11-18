@@ -150,6 +150,11 @@
 <!-- Razorpay Checkout Script -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
+// Debug: Log the Razorpay key being used
+console.log('DEBUG - Razorpay Key ID:', "{{ razorpay_key_id }}");
+console.log('DEBUG - Order ID:', "{{ razorpay_order_id }}");
+console.log('DEBUG - Amount:', "{{ amount }}");
+
 document.getElementById('pay-button').onclick = function(e) {
     e.preventDefault();
     

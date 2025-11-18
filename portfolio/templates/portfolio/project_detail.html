@@ -105,7 +105,7 @@
                 <div class="flex items-center justify-between">
                   <div>
                     <h4 class="text-lg font-semibold">Purchase</h4>
-                    <p class="text-xs muted mt-1">Everything declared here — one-click buy</p>
+                    <p class="text-xs muted mt-1">Get instant quote via WhatsApp chat</p>
                   </div>
                 </div>
 
@@ -116,7 +116,11 @@
                 </ul>
 
                 <div class="mt-3">
-                  <a href="{% url 'portfolio:contact' %}#contact" class="btn btn-primary w-full">Buy</a>
+                  <a href="https://wa.me/9970343289?text=Hi%20Pranit,%20I%20want%20to%20purchase%20the%20{{ project.title|urlencode }}%20project.%20Please%20provide%20me%20with%20the%20price%20and%20payment%20details." 
+                     target="_blank" rel="noopener"
+                     class="btn btn-primary w-full">
+                    <span>💬</span> Buy via WhatsApp
+                  </a>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from django.utils.text import slugify
 
 
 class Contact(models.Model):
@@ -11,6 +12,66 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.name} <{self.email}>"
+
+
+class Project(models.Model):
+    """Model to store portfolio projects"""
+    CATEGORY_CHOICES = [
+        ('web', 'Web Development'),
+        ('mobile', 'Mobile Development'),
+        ('iot', 'IoT Projects'),
+        ('automation', 'Automation'),
+        ('ai-ml', 'AI/ML'),
+        ('education', 'Educational'),
+        ('other', 'Other'),
+    ]
+    
+    STATUS_CHOICES = [
+        ('completed', 'Completed'),
+        ('in_progress', 'In Progress'),
+        ('planned', 'Planned'),
+    ]
+    
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    description = models.TextField()
+    short_description = models.CharField(max_length=300, help_text="Brief description for cards")
+    
+    # Project details
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='web')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='completed')
+    technologies = models.CharField(max_length=500, help_text="Comma separated list of technologies used")
+    
+    # Media
+    image = models.ImageField(upload_to='projects/', blank=True, null=True)
+    demo_url = models.URLField(blank=True, null=True, help_text="Live demo URL")
+    github_url = models.URLField(blank=True, null=True, help_text="GitHub repository URL")
+    
+    # Display options
+    is_featured = models.BooleanField(default=False, help_text="Show on homepage")
+    is_published = models.BooleanField(default=True)
+    display_order = models.IntegerField(default=0, help_text="Lower numbers appear first")
+    
+    # Metadata
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['display_order', '-created_at']
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.title
+    
+    def get_technologies_list(self):
+        """Return technologies as a list"""
+        if self.technologies:
+            return [tech.strip() for tech in self.technologies.split(',')]
+        return []
 
 
 class PaymentOrder(models.Model):

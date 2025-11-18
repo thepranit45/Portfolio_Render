@@ -68,6 +68,11 @@ def project_student_result(request):
     return render(request, 'portfolio/project_student_result.html')
 
 
+def project_attendance_management(request):
+    """Project detail page for Attendance Management System (static page)."""
+    return render(request, 'portfolio/project_attendance_management.html')
+
+
 def project_detail(request, slug):
     """Generic project detail view. Looks up project data by slug and renders a detail page.
 
@@ -149,8 +154,13 @@ def create_payment(request, service_id):
             order.order_id = str(uuid.uuid4())[:8].upper()
             order.save()
             
+            # Debug: Print Razorpay keys for troubleshooting
+            print(f"DEBUG - RAZORPAY_KEY_ID: {settings.RAZORPAY_KEY_ID}")
+            print(f"DEBUG - RAZORPAY_KEY_SECRET: {settings.RAZORPAY_KEY_SECRET[:8]}...")
+            
             # Initialize Razorpay client
             client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+            print("DEBUG - Razorpay client initialized successfully")
             
             # Create Razorpay order
             razorpay_order_data = {

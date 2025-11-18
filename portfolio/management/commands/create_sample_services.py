@@ -11,67 +11,35 @@ class Command(BaseCommand):
         
         services = [
             {
-                'name': 'Technical Consultation',
-                'description': 'One-on-one technical consultation session to discuss your project requirements, technology stack, architecture decisions, and best practices.',
-                'service_type': 'consultation',
-                'price': 2500.00,
-                'duration': '1 hour',
-                'is_active': True
-            },
-            {
-                'name': 'Website Development',
-                'description': 'Complete responsive website development using modern technologies like React, Django, or Next.js with custom design and functionality.',
-                'service_type': 'development',
-                'price': 15000.00,
-                'duration': '2-3 weeks',
-                'is_active': True
-            },
-            {
-                'name': 'Mobile App Development',
-                'description': 'Native or cross-platform mobile app development for Android and iOS with modern UI/UX and backend integration.',
-                'service_type': 'development',
-                'price': 25000.00,
-                'duration': '4-6 weeks',
-                'is_active': True
-            },
-            {
-                'name': 'Website Maintenance',
-                'description': 'Monthly website maintenance including updates, security patches, performance optimization, and technical support.',
-                'service_type': 'maintenance',
-                'price': 3000.00,
-                'duration': '1 month',
-                'is_active': True
-            },
-            {
-                'name': 'Python Training',
-                'description': 'Comprehensive Python programming training covering basics to advanced topics including Django, data structures, and web development.',
-                'service_type': 'training',
-                'price': 8000.00,
-                'duration': '10 sessions',
-                'is_active': True
-            },
-            {
-                'name': 'React.js Workshop',
-                'description': 'Hands-on React.js workshop covering components, hooks, state management, and modern development practices with real projects.',
-                'service_type': 'training',
-                'price': 6000.00,
-                'duration': '8 sessions',
-                'is_active': True
-            },
-            {
                 'name': 'Code Review Service',
-                'description': 'Professional code review with detailed feedback on code quality, performance, security, and best practices recommendations.',
+                'description': 'Professional code review with detailed feedback on code quality, performance, security vulnerabilities, and best practices. Includes written report with actionable recommendations.',
                 'service_type': 'consultation',
-                'price': 1500.00,
+                'price': 10.00,
                 'duration': '2-3 hours',
                 'is_active': True
             },
             {
-                'name': 'Custom E-commerce Solution',
-                'description': 'Complete e-commerce platform development with payment integration, inventory management, and admin dashboard.',
+                'name': 'IoT Project Development',
+                'description': 'Complete IoT solution with sensor integration, basic data collection, cloud connectivity (Firebase/AWS), and simple monitoring dashboard. Custom sensors and advanced features quoted separately.',
                 'service_type': 'development',
-                'price': 35000.00,
-                'duration': '6-8 weeks',
+                'price': 15000.00,
+                'duration': '3-4 weeks',
+                'is_active': True
+            },
+            {
+                'name': 'Android Development',
+                'description': 'Native Android app with modern UI/UX (up to 5 screens), basic API integration, local database, and Google Play Store submission. Advanced features and complex integrations quoted separately.',
+                'service_type': 'development',
+                'price': 12000.00,
+                'duration': '3-5 weeks',
+                'is_active': True
+            },
+            {
+                'name': 'Automation Solutions',
+                'description': 'Custom automation script for business processes including web scraping (up to 3 sites), basic workflow automation, or simple task scheduling. Complex enterprise solutions quoted separately.',
+                'service_type': 'development',
+                'price': 8000.00,
+                'duration': '2-3 weeks',
                 'is_active': True
             }
         ]

@@ -274,5 +274,264 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------- Mobile Menu Toggle ----------
+  const mobileMenuBtn = safeQuery('#mobile-menu-btn');
+  const mobileMenu = safeQuery('#mobile-menu');
+  
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      // Update button icon
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenuBtn.textContent = isOpen ? '✕' : '☰';
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.textContent = '☰';
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.textContent = '☰';
+      }
+    });
+  }
+
+  // ---------- Advanced Home Page Interactive Effects ----------
+  
+  // Mouse movement parallax effect for floating elements
+  const techFloatingElements = document.querySelectorAll('.floating-tech-ring, .tech-icon');
+  const heroSection = document.querySelector('section');
+  
+  if (heroSection && techFloatingElements.length > 0) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      
+      const xPercent = (clientX / innerWidth - 0.5) * 2; // -1 to 1
+      const yPercent = (clientY / innerHeight - 0.5) * 2; // -1 to 1
+      
+      techFloatingElements.forEach((el, index) => {
+        const speed = 0.1 + (index % 3) * 0.05; // Different speeds for variation
+        const x = xPercent * 20 * speed;
+        const y = yPercent * 20 * speed;
+        
+        el.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+    
+    // Reset position when mouse leaves
+    heroSection.addEventListener('mouseleave', () => {
+      techFloatingElements.forEach(el => {
+        el.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+  
+  // Interactive tech bubbles click effects
+  const techBubbles = document.querySelectorAll('.tech-bubble');
+  techBubbles.forEach(bubble => {
+    bubble.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Create ripple effect
+      const ripple = document.createElement('div');
+      ripple.className = 'absolute inset-0 bg-white/20 rounded-full animate-ping';
+      bubble.appendChild(ripple);
+      
+      // Remove ripple after animation
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+      
+      // Add rotation effect
+      bubble.style.transform = 'rotate(360deg) scale(1.1)';
+      setTimeout(() => {
+        bubble.style.transform = 'rotate(0deg) scale(1)';
+      }, 600);
+    });
+  });
+  
+  // Smooth scroll reveal animation for elements
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  // Observe elements for reveal animation
+  const revealElements = document.querySelectorAll('.tech-bubble, .tech-icon');
+  revealElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+  
+  // Dynamic background particle connections
+  const createParticleConnections = () => {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'particle-connections';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '1';
+    canvas.style.opacity = '0.3';
+    
+    document.body.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    const createParticles = () => {
+      particles = [];
+      const particleCount = Math.min(50, window.innerWidth / 30);
+      
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1
+        });
+      }
+    };
+    
+    const updateParticles = () => {
+      particles.forEach(particle => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+      });
+    };
+    
+    const drawParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw particles
+      ctx.fillStyle = 'rgba(139, 92, 246, 0.6)';
+      particles.forEach(particle => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      
+      // Draw connections
+      ctx.strokeStyle = 'rgba(139, 92, 246, 0.2)';
+      ctx.lineWidth = 1;
+      
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+    
+    const animate = () => {
+      updateParticles();
+      drawParticles();
+      requestAnimationFrame(animate);
+    };
+    
+    resizeCanvas();
+    createParticles();
+    animate();
+    
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      createParticles();
+    });
+  };
+  
+  // Initialize particle connections
+  createParticleConnections();
+
+  // ---------- Dynamic Typing Animation for Developer Roles ----------
+  const navbarTypingText = document.getElementById('typing-text');
+  if (navbarTypingText) {
+    console.log('Typing animation initialized'); // Debug log
+    const roles = ['Android Developer', 'UX Designer', 'Python Developer'];
+    let currentRoleIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let isWaiting = false;
+
+    function typeAnimation() {
+      const currentRole = roles[currentRoleIndex];
+      
+      if (!isDeleting && !isWaiting) {
+        // Typing
+        if (currentCharIndex < currentRole.length) {
+          navbarTypingText.textContent = currentRole.substring(0, currentCharIndex + 1);
+          currentCharIndex++;
+          setTimeout(typeAnimation, 60);
+        } else {
+          // Wait before starting to delete
+          isWaiting = true;
+          setTimeout(() => {
+            isWaiting = false;
+            isDeleting = true;
+            typeAnimation();
+          }, 800);
+        }
+      } else if (isDeleting && !isWaiting) {
+        // Deleting
+        if (currentCharIndex > 0) {
+          navbarTypingText.textContent = currentRole.substring(0, currentCharIndex - 1);
+          currentCharIndex--;
+          setTimeout(typeAnimation, 30);
+        } else {
+          // Move to next role
+          isDeleting = false;
+          currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+          setTimeout(typeAnimation, 200);
+        }
+      }
+    }
+
+    // Start the animation after a small delay
+    setTimeout(() => {
+      typeAnimation();
+    }, 500);
+  } else {
+    console.log('typing-text element not found'); // Debug log
+  }
+
 });
 

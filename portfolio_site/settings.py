@@ -163,8 +163,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'no-reply@example.com'
 
 # Razorpay Configuration
-RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID', 'rzp_test_your_key_id')
-RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET', 'your_key_secret')
+RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID', 'rzp_test_Rh6fsnuqQx2rkP')
+RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET', 'Hs7pwHiS4rOiGs98Uew4QImh')
+
+# Debug: Print Razorpay configuration (remove in production)
+if DEBUG:
+    print(f"Loading Razorpay config - Key ID: {RAZORPAY_KEY_ID}")
+    print(f"Loading Razorpay config - Secret: {RAZORPAY_KEY_SECRET[:8]}..." if RAZORPAY_KEY_SECRET else "No secret found")
 
 # Payment Configuration
 RAZORPAY_WEBHOOK_SECRET = os.getenv('RAZORPAY_WEBHOOK_SECRET', 'webhook_secret')
