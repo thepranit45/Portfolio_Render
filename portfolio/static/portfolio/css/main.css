@@ -706,3 +706,49 @@ a:hover::after {
     section h2 { font-size: 1.5rem; }
     section h3 { font-size: 1.1rem; }
 }
+
+/* Tech-logo rendering helpers */
+.tech-logo { 
+    filter: none !important; /* Force original colors */
+    display: inline-block; 
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-logo:hover {
+    filter: none !important; /* Keep original colors on hover */
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(0, 208, 132, 0.3);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Dark theme adjustments for tech logos */
+body:not(.light-theme) .tech-logo {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body:not(.light-theme) .tech-logo:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 20px rgba(0, 208, 132, 0.4);
+}
+
+/* Light theme adjustments for tech logos */
+body.light-theme .tech-logo {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .tech-logo:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 20px rgba(14, 165, 127, 0.3);
+}
+
+.tech-logo.no-filter { 
+    filter: none !important; 
+    background: transparent !important;
+    padding: 0 !important;
+}

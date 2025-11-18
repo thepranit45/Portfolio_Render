@@ -24,7 +24,36 @@
   }
   </script>
 
-  <link rel="stylesheet" href="{% static 'portfolio/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/main.css' %}?v=20251118-11">
+  <style>
+    /* External logo images - Mixed sources styling */
+    .tech-logo-color { 
+        filter: none !important;
+        -webkit-filter: none !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-radius: 8px !important;
+        padding: 4px !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+        display: inline-block !important;
+        object-fit: contain !important;
+    }
+    .tech-logo-color:hover {
+        transform: scale(1.15) !important;
+        background: rgba(255, 255, 255, 1) !important;
+        box-shadow: 0 8px 20px rgba(0, 208, 132, 0.4) !important;
+        filter: brightness(1.1) !important;
+    }
+    /* Ensure images load properly - support both PNG and SVG */
+    img.tech-logo-color {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        max-width: 32px !important;
+        max-height: 32px !important;
+    }
+  </style>
+  <!-- Mixed logo sources (SeekLogo PNG + WorldVector SVG): v20251118-7 -->
   {% block head_extra %}{% endblock %}
 </head>
 <body class="relative">

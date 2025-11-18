@@ -5,47 +5,256 @@
 {% block content %}
 <section class="min-h-screen py-20 pt-32">
   <div class="container mx-auto px-6">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <a href="{% url 'portfolio:projects' %}" class="text-primary mb-6 inline-block">← Back to Projects</a>
-      <h1 class="text-4xl font-bold mb-4">Student Result System</h1>
-      <p class="text-gray-400 mb-6">A lightweight result management system allowing admins to manage students, subjects and marks; and students to view and download their results.</p>
+      
+      <!-- Horizontal Layout: Main content + Sidebar -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Main Content (Left Side) -->
+        <div class="lg:col-span-2 space-y-6">
+          <div>
+            <h1 class="text-4xl font-bold mb-4">Student Result System</h1>
+            <p class="text-gray-400 mb-6">A lightweight result management system allowing admins to manage students, subjects and marks; and students to view and download their results.</p>
+          </div>
 
-      <div class="glass p-6 rounded-2xl subtle-glow mb-6">
-        <h2 class="text-2xl font-semibold mb-3">⭐ Features (Short)</h2>
-        <ul class="list-disc list-inside text-gray-300 space-y-2">
-          <li>Admin login &amp; dashboard</li>
-          <li>Add/manage students &amp; subjects</li>
-          <li>Enter marks and generate results</li>
-          <li>Automatic CGPA, percentage &amp; pass/fail calculation</li>
-          <li>Students can view and download/print their results</li>
-          <li>Secure and user-friendly interface</li>
-        </ul>
-      </div>
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h2 class="text-2xl font-semibold mb-3">⭐ Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Admin login & dashboard</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Add/manage students & subjects</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Enter marks and generate results</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Automatic CGPA calculation</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Students view & download results</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                <span class="text-green-400 text-xl">✓</span>
+                <span>Secure user-friendly interface</span>
+              </div>
+            </div>
+          </div>
 
-      <div class="glass p-6 rounded-2xl subtle-glow mb-6">
-        <h2 class="text-2xl font-semibold mb-3">💻 Technologies Used (Short)</h2>
-        <ul class="list-inside text-gray-300 space-y-2">
-          <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
-          <li><strong>Backend:</strong> PHP</li>
-          <li><strong>Database:</strong> MySQL</li>
-          <li><strong>Tools:</strong> XAMPP/WAMP, phpMyAdmin</li>
-        </ul>
-      </div>
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h2 class="text-2xl font-semibold mb-3">🔧 Modules</h2>
+            <div class="space-y-3">
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Admin Module</h3>
+                <p class="text-gray-300 text-sm">Manage students, subjects, marks, and results with full administrative control.</p>
+              </div>
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Student Module</h3>
+                <p class="text-gray-300 text-sm">Students can view and download their results in PDF format.</p>
+              </div>
+              <div class="p-4 bg-slate-800/30 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Result Module</h3>
+                <p class="text-gray-300 text-sm">Automatic CGPA, percentage, and pass/fail processing with detailed analytics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="glass p-6 rounded-2xl subtle-glow mb-6">
-        <h2 class="text-2xl font-semibold mb-3">🔧 Modules (Short)</h2>
-        <ul class="list-inside text-gray-300 space-y-2">
-          <li><strong>Admin Module:</strong> Manage students, subjects, marks, results</li>
-          <li><strong>Student Module:</strong> View &amp; download result</li>
-          <li><strong>Result Module:</strong> CGPA, percentage, pass/fail processing</li>
-        </ul>
-      </div>
+        <!-- Sidebar (Right Side) -->
+        <div class="lg:col-span-1 space-y-6">
+          
+          <!-- Purchase Section -->
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h2 class="text-xl font-semibold mb-4 text-center">💰 Purchase</h2>
+            <div class="bg-gradient-to-br from-indigo-900/20 to-slate-900/10 border border-indigo-500/20 rounded-xl p-4">
+              <div class="text-center mb-4">
+                <h3 class="text-lg font-semibold text-white">Complete Source Code</h3>
+                <p class="text-gray-300 text-xs">Get instant access to full project</p>
+                <div class="mt-3">
+                  <div class="text-2xl font-bold text-primary">₹999</div>
+                  <div class="text-sm text-gray-400 line-through">₹1999</div>
+                </div>
+              </div>
+              
+              <ul class="text-xs text-gray-300 space-y-2 mb-4">
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✓</span>
+                  Complete PHP source code
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✓</span>
+                  PostgreSQL database schema
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✓</span>
+                  Installation guide
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✓</span>
+                  Lifetime updates
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-green-400">✓</span>
+                  24/7 support
+                </li>
+              </ul>
 
-      <div class="glass p-6 rounded-2xl subtle-glow">
-        <h3 class="text-xl font-semibold mb-3">Notes</h3>
-        <p class="text-gray-300">This implementation is typically deployed on a LAMP stack (XAMPP or WAMP locally). The PHP backend interacts with a MySQL database; admin operations are standard CRUD flows and results computation runs server-side for accuracy and security. For production, ensure proper authentication, input validation, HTTPS, and database backups.</p>
+              <button onclick="showPaymentDemo()" class="w-full bg-gradient-to-r from-primary to-indigo-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-indigo-600 hover:to-primary transition-all duration-300 transform hover:scale-105 shadow-lg text-sm">
+                🛒 Buy Now
+              </button>
+              
+              <div class="flex items-center justify-center gap-3 mt-3 text-xs text-gray-500">
+                <span>🔒 Secure</span>
+                <span>💳 Cards</span>
+                <span>⚡ Instant</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technologies -->
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h3 class="text-lg font-semibold mb-4">💻 Technologies</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold">H</div>
+                <span class="text-sm">HTML, CSS, JavaScript</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">P</div>
+                <span class="text-sm">PHP Backend</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold">P</div>
+                <span class="text-sm">PostgreSQL Database</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Info -->
+          <div class="glass p-6 rounded-2xl subtle-glow">
+            <h3 class="text-lg font-semibold mb-4">📋 Project Info</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-400">Status:</span>
+                <span class="text-green-400">Ready</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">License:</span>
+                <span>-</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Updated:</span>
+                <span>Nov 2025</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Version:</span>
+                <span>v1.0</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Real Razorpay Payment Gateway (FREE) -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+function showPaymentDemo() {
+  // Real Razorpay integration - FREE to setup!
+  var options = {
+    "key": "rzp_test_1DP5mmOlF5G5ag", // FREE test key (replace with your own)
+    "amount": "99900", // ₹999 in paise
+    "currency": "INR",
+    "name": "Pranit Gopale",
+    "description": "Student Result System - Source Code",
+    "image": "https://your-website.com/logo.png", // Add your logo URL
+    "handler": function (response){
+      // Payment Success
+      alert("🎉 Payment Successful!\n\n" + 
+            "Payment ID: " + response.razorpay_payment_id + "\n" +
+            "✅ Thank you for your purchase!\n" +
+            "📧 Download link sent to your email.");
+      
+      // You can send this to your backend to verify and deliver the product
+      console.log("Payment ID:", response.razorpay_payment_id);
+      
+      // Simulate download process
+      setTimeout(() => {
+        alert("📁 Your download is ready!\n" + 
+              "Check your email for the download link.\n\n" +
+              "Support: Contact us for any issues.");
+      }, 1500);
+    },
+    "prefill": {
+      "name": "Customer Name",
+      "email": "customer@example.com",
+      "contact": "9999999999"
+    },
+    "theme": {
+      "color": "#6366f1"
+    }
+  };
+  
+  var rzp1 = new Razorpay(options);
+  
+  // Handle payment failure
+  rzp1.on('payment.failed', function (response){
+    alert("❌ Payment Failed!\n\n" +
+          "Error: " + response.error.description + "\n" +
+          "Please try again or contact support.");
+  });
+  
+  rzp1.open();
+}
+</script>
+
+<!-- 
+🚀 TO MAKE THIS REAL & FREE:
+
+1. 📝 SIGNUP AT RAZORPAY (FREE):
+   - Go to: https://razorpay.com/
+   - Click "Sign Up" 
+   - Verify your email
+   - Complete KYC (just basic details)
+   
+2. 🔑 GET YOUR KEYS:
+   - Login to Razorpay Dashboard
+   - Go to Settings → API Keys
+   - Generate Test Key (FREE)
+   - Replace "rzp_test_1DP5mmOlF5G5ag" with your key
+   
+3. 🏦 ADD BANK ACCOUNT:
+   - Add your bank account in dashboard
+   - Money will be deposited here automatically
+   
+4. ✅ TEST PAYMENTS:
+   - Use test card: 4111 1111 1111 1111
+   - Any future date for expiry
+   - Any 3-digit CVV
+   
+5. 🔴 GO LIVE:
+   - Submit documents for verification
+   - Get live API keys
+   - Replace test key with live key
+   - Start accepting real payments!
+   
+💰 PRICING: 
+- Setup: FREE
+- Monthly: FREE  
+- Per transaction: 2.36% (only when you earn!)
+
+📞 SUPPORT: 24/7 chat support on their website
+-->
+</script>
 {% endblock %}
