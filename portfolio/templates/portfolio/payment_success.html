@@ -1,0 +1,181 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Payment Successful — Order {{ order.order_id }}{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32 bg-dark/50">
+  <div class="container mx-auto px-6">
+    
+    <!-- Progress Indicator -->
+    <div class="max-w-4xl mx-auto mb-8">
+      <div class="flex items-center justify-center gap-4 text-sm">
+        <div class="flex items-center gap-2 text-green-400">
+          <span class="bg-green-500 text-dark rounded-full w-8 h-8 flex items-center justify-center font-bold">✓</span>
+          <span class="font-semibold">Details</span>
+        </div>
+        <div class="h-0.5 bg-green-500 w-12"></div>
+        <div class="flex items-center gap-2 text-green-400">
+          <span class="bg-green-500 text-dark rounded-full w-8 h-8 flex items-center justify-center font-bold">✓</span>
+          <span class="font-semibold">Payment</span>
+        </div>
+        <div class="h-0.5 bg-green-500 w-12"></div>
+        <div class="flex items-center gap-2 text-green-400">
+          <span class="bg-green-500 text-dark rounded-full w-8 h-8 flex items-center justify-center font-bold">✓</span>
+          <span class="font-semibold">Confirmation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      
+      <!-- Success Message -->
+      <div class="glass p-12 rounded-2xl subtle-glow text-center mb-8">
+        
+        <!-- Success Animation -->
+        <div class="relative mb-8">
+          <div class="text-8xl mb-6 animate-bounce">🎉</div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-32 h-32 bg-green-500/20 rounded-full animate-ping"></div>
+          </div>
+        </div>
+
+        <h1 class="text-4xl font-bold text-green-400 mb-4">Payment Successful!</h1>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Thank you for your payment. Your order has been confirmed and we've sent you an email receipt.
+        </p>
+
+        <!-- Order Details -->
+        <div class="bg-slate-800/30 p-8 rounded-lg mb-8 text-left">
+          <h3 class="font-bold text-xl mb-6 text-center text-white flex items-center justify-center gap-3">
+            <span>📋</span> Order Details
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                <span class="text-gray-400 font-semibold">Order ID</span>
+                <span class="font-mono text-primary font-bold">{{ order.order_id }}</span>
+              </div>
+              
+              <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                <span class="text-gray-400 font-semibold">Customer Name</span>
+                <span class="text-white">{{ order.customer_name }}</span>
+              </div>
+              
+              <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                <span class="text-gray-400 font-semibold">Email</span>
+                <span class="text-white">{{ order.customer_email }}</span>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              {% if payment %}
+                <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                  <span class="text-gray-400 font-semibold">Payment ID</span>
+                  <span class="font-mono text-green-400 text-sm">{{ payment.razorpay_payment_id }}</span>
+                </div>
+              {% endif %}
+              
+              <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                <span class="text-gray-400 font-semibold">Amount Paid</span>
+                <span class="text-primary font-bold">₹{{ order.amount }}</span>
+              </div>
+              
+              <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                <span class="text-gray-400 font-semibold">Payment Date</span>
+                <span class="text-white">{{ order.updated_at|date:"M d, Y H:i" }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="{% url 'portfolio:services' %}" class="btn-primary">
+            <span>🛍️</span> Browse More Services
+          </a>
+          
+          <a href="{% url 'portfolio:contact' %}" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 justify-center">
+            <span>📧</span> Contact Support
+          </a>
+        </div>
+      </div>
+
+      <!-- What's Next -->
+      <div class="glass p-8 rounded-2xl subtle-glow">
+        <h2 class="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-3">
+          <span>🚀</span> What Happens Next?
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="bg-blue-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">📧</span>
+            </div>
+            <h4 class="font-semibold text-blue-400 mb-2">Email Confirmation</h4>
+            <p class="text-gray-400 text-sm">
+              You'll receive a detailed email confirmation with your order details and next steps
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-green-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">🤝</span>
+            </div>
+            <h4 class="font-semibold text-green-400 mb-2">Personal Contact</h4>
+            <p class="text-gray-400 text-sm">
+              I'll reach out to you within 24 hours to discuss your requirements and timeline
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl">🎯</span>
+            </div>
+            <h4 class="font-semibold text-purple-400 mb-2">Project Kickoff</h4>
+            <p class="text-gray-400 text-sm">
+              We'll schedule a kickoff meeting and begin work on your project immediately
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Support Information -->
+      <div class="mt-8 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl text-center">
+        <h3 class="font-bold text-blue-400 mb-4 flex items-center justify-center gap-3">
+          <span>📞</span> Need Help?
+        </h3>
+        
+        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="text-gray-300 mb-2">📧 Email Support</p>
+            <a href="mailto:support@pranit-mestry.com" class="text-primary hover:underline">
+              support@pranit-mestry.com
+            </a>
+          </div>
+          
+          <div>
+            <p class="text-gray-300 mb-2">📱 WhatsApp Support</p>
+            <a href="https://wa.me/919876543210" target="_blank" class="text-primary hover:underline">
+              +91 9876543210
+            </a>
+          </div>
+        </div>
+        
+        <p class="text-gray-500 text-xs mt-4">
+          We typically respond within 2 hours during business hours
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Celebration effect
+document.addEventListener('DOMContentLoaded', function() {
+    // Add some confetti or celebration effect here if desired
+    console.log('🎉 Payment successful! Order ID: {{ order.order_id }}');
+});
+</script>
+{% endblock %}

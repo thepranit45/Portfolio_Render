@@ -1,81 +1,206 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
-{% block title %}Pranit Gopale — Contact{% endblock %}
+{% block title %}Contact Us — Pranit Mestry{% endblock %}
 
 {% block content %}
 <section class="min-h-screen py-20 pt-32 bg-dark/50">
   <div class="container mx-auto px-6">
-    <h1 class="mb-8">💬 Let's Connect</h1>
+    <h1 class="mb-8">💬 Contact Us</h1>
 
-    <div class="max-w-2xl mx-auto">
-      <div class="glass p-8 rounded-2xl subtle-glow mb-8">
-        <p class="text-gray-300 text-lg leading-relaxed">Have a project in mind? 🚀 Want to collaborate or just say hi? 👋 Fill out the form below and I'll get back to you as soon as possible. I'm always excited to hear about new opportunities!</p>
-      </div>
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Contact Form Section -->
+      <div class="grid lg:grid-cols-2 gap-8 mb-12">
+        <div class="glass p-8 rounded-2xl subtle-glow">
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span>📧</span> Get In Touch
+          </h2>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            Have a project in mind? 🚀 Want to collaborate or need support? 
+            Fill out the form below and I'll get back to you as soon as possible. 
+            I'm always excited to hear about new opportunities!
+          </p>
 
-      <div class="glass p-8 rounded-2xl subtle-glow" id="contact">
-        <form method="post" id="contact-form" class="space-y-6">
-          {% csrf_token %}
-          
-          {% if form.non_field_errors %}
-            <div class="bg-red-500/20 border border-red-500/50 text-red-300 p-4 rounded-lg flex items-start gap-3">
-              <span class="text-xl">⚠️</span>
-              <div>
-                {% for error in form.non_field_errors %}
-                  <p>{{ error }}</p>
-                {% endfor %}
+          <form method="post" id="contact-form" class="space-y-6">
+            {% csrf_token %}
+            
+            {% if form.non_field_errors %}
+              <div class="bg-red-500/20 border border-red-500/50 text-red-300 p-4 rounded-lg flex items-start gap-3">
+                <span class="text-xl">⚠️</span>
+                <div>
+                  {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
               </div>
+            {% endif %}
+
+            <div>
+              <label for="{{ form.name.id_for_label }}" class="block text-sm font-semibold mb-2 text-light flex items-center gap-2">
+                <span>👤</span> Your Name
+              </label>
+              {{ form.name }}
+              {% if form.name.errors %}
+                <span class="text-red-400 text-sm mt-1 flex items-center gap-1">
+                  <span>❌</span> {{ form.name.errors.0 }}
+                </span>
+              {% endif %}
             </div>
-          {% endif %}
 
-          <div>
-            <label for="{{ form.name.id_for_label }}" class="block text-sm font-semibold mb-2 text-light flex items-center gap-2"><span>👤</span> Your Name</label>
-            {{ form.name }}
-            {% if form.name.errors %}
-              <span class="text-red-400 text-sm mt-1 flex items-center gap-1"><span>❌</span> {{ form.name.errors.0 }}</span>
-            {% endif %}
-          </div>
+            <div>
+              <label for="{{ form.email.id_for_label }}" class="block text-sm font-semibold mb-2 text-light flex items-center gap-2">
+                <span>📧</span> Email Address
+              </label>
+              {{ form.email }}
+              {% if form.email.errors %}
+                <span class="text-red-400 text-sm mt-1 flex items-center gap-1">
+                  <span>❌</span> {{ form.email.errors.0 }}
+                </span>
+              {% endif %}
+            </div>
 
-          <div>
-            <label for="{{ form.email.id_for_label }}" class="block text-sm font-semibold mb-2 text-light flex items-center gap-2"><span>📧</span> Email Address</label>
-            {{ form.email }}
-            {% if form.email.errors %}
-              <span class="text-red-400 text-sm mt-1 flex items-center gap-1"><span>❌</span> {{ form.email.errors.0 }}</span>
-            {% endif %}
-          </div>
+            <div>
+              <label for="{{ form.message.id_for_label }}" class="block text-sm font-semibold mb-2 text-light flex items-center gap-2">
+                <span>💭</span> Message
+              </label>
+              {{ form.message }}
+              {% if form.message.errors %}
+                <span class="text-red-400 text-sm mt-1 flex items-center gap-1">
+                  <span>❌</span> {{ form.message.errors.0 }}
+                </span>
+              {% endif %}
+            </div>
 
-          <div>
-            <label for="{{ form.message.id_for_label }}" class="block text-sm font-semibold mb-2 text-light flex items-center gap-2"><span>💭</span> Message</label>
-            {{ form.message }}
-            {% if form.message.errors %}
-              <span class="text-red-400 text-sm mt-1 flex items-center gap-1"><span>❌</span> {{ form.message.errors.0 }}</span>
-            {% endif %}
-          </div>
-
-          <button type="submit" class="btn-primary w-full justify-center"><span>✉️</span> Send Message</button>
-        </form>
-      </div>
-
-      <!-- Alternative contact methods -->
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="glass p-6 rounded-lg text-center hover-scale">
-          <div class="text-4xl mb-3">💼</div>
-          <h4 class="font-semibold mb-2">LinkedIn</h4>
-          <p class="text-gray-400 text-sm mb-3">Professional network</p>
-          <a href="#" class="text-primary hover:text-accent font-semibold inline-flex items-center gap-1"><span>→</span> Connect</a>
-        </div>
-        <div class="glass p-6 rounded-lg text-center hover-scale">
-          <div class="text-4xl mb-3">💻</div>
-          <h4 class="font-semibold mb-2">GitHub</h4>
-          <p class="text-gray-400 text-sm mb-3">Check my code</p>
-          <a href="#" class="text-primary hover:text-accent font-semibold inline-flex items-center gap-1"><span>→</span> Follow</a>
-        </div>
-        <div class="glass p-6 rounded-lg text-center hover-scale">
-          <div class="text-4xl mb-3">�</div>
-          <h4 class="font-semibold mb-2">WhatsApp</h4>
-          <p class="text-gray-400 text-sm mb-3">Quick message</p>
-          <a href="#" class="text-primary hover:text-accent font-semibold inline-flex items-center gap-1"><span>→</span> Message</a>
+            <button type="submit" class="btn-primary w-full justify-center">
+              <span>✉️</span> Send Message
+            </button>
+          </form>
         </div>
       </div>
+
+      <!-- Support Channels -->
+      <div class="glass p-8 rounded-2xl subtle-glow mb-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span>🎧</span> Customer Support
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-800/30 p-6 rounded-lg text-center">
+            <div class="text-4xl mb-3">📧</div>
+            <h4 class="font-semibold mb-2 text-green-400">General Support</h4>
+            <p class="text-gray-400 text-sm mb-3">For general inquiries and support</p>
+            <a href="mailto:thepranit.19@gmail.com" class="text-primary hover:underline">thepranit.19@gmail.com</a>
+            <p class="text-xs text-gray-500 mt-2">Response: Within 24 hours</p>
+          </div>
+          
+          <div class="bg-slate-800/30 p-6 rounded-lg text-center">
+            <div class="text-4xl mb-3">💳</div>
+            <h4 class="font-semibold mb-2 text-blue-400">Payment Support</h4>
+            <p class="text-gray-400 text-sm mb-3">Payment & billing questions</p>
+            <a href="mailto:thepranit.19@gmail.com" class="text-primary hover:underline">thepranit.19@gmail.com</a>
+            <p class="text-xs text-gray-500 mt-2">Response: Within 12 hours</p>
+          </div>
+          
+          <div class="bg-slate-800/30 p-6 rounded-lg text-center">
+            <div class="text-4xl mb-3">🚨</div>
+            <h4 class="font-semibold mb-2 text-red-400">Emergency Support</h4>
+            <p class="text-gray-400 text-sm mb-3">Urgent technical issues</p>
+            <a href="mailto:thepranit.19@gmail.com" class="text-primary hover:underline">thepranit.19@gmail.com</a>
+            <p class="text-xs text-gray-500 mt-2">Response: Within 2 hours</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media & Professional Networks -->
+      <div class="glass p-8 rounded-2xl subtle-glow" id="contact">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span>🌐</span> Connect With Me
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="bg-slate-800/30 p-6 rounded-lg text-center hover-scale">
+            <div class="text-4xl mb-3">💼</div>
+            <h4 class="font-semibold mb-2">LinkedIn</h4>
+            <p class="text-gray-400 text-sm mb-3">Professional network & updates</p>
+            <a href="https://linkedin.com/in/pranit-mestry" target="_blank" class="text-primary hover:text-accent font-semibold inline-flex items-center gap-1">
+              <span>→</span> Connect
+            </a>
+          </div>
+          
+          <div class="bg-slate-800/30 p-6 rounded-lg text-center hover-scale">
+            <div class="text-4xl mb-3">💻</div>
+            <h4 class="font-semibold mb-2">GitHub</h4>
+            <p class="text-gray-400 text-sm mb-3">Open source projects & code</p>
+            <a href="https://github.com/thepranit45" target="_blank" class="text-primary hover:text-accent font-semibold inline-flex items-center gap-1">
+              <span>→</span> Follow
+            </a>
+          </div>
+          
+          <div class="bg-slate-800/30 p-6 rounded-lg text-center hover-scale">
+            <div class="text-4xl mb-3">📱</div>
+            <h4 class="font-semibold mb-2">WhatsApp</h4>
+            <p class="text-gray-400 text-sm mb-3">Quick messages & voice calls</p>
+            <a href="https://wa.me/919970343404" target="_blank" class="text-primary hover:text-accent font-semibold inline-flex items-center gap-1">
+              <span>→</span> Message
+            </a>
+          </div>
+          
+          <div class="bg-slate-800/30 p-6 rounded-lg text-center hover-scale">
+            <div class="text-4xl mb-3">📧</div>
+            <h4 class="font-semibold mb-2">Email</h4>
+            <p class="text-gray-400 text-sm mb-3">Direct communication</p>
+            <a href="mailto:thepranit.19@gmail.com" class="text-primary hover:text-accent font-semibold inline-flex items-center gap-1">
+              <span>→</span> Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Important Notes -->
+      <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-2xl mt-8">
+        <h3 class="text-xl font-bold mb-4 text-blue-400 flex items-center gap-3">
+          <span>ℹ️</span> Important Information
+        </h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-300">
+          <div>
+            <h4 class="font-semibold mb-2 text-white">📞 Phone Support</h4>
+            <ul class="space-y-1">
+              <li>• Available during business hours only</li>
+              <li>• For urgent matters outside hours, use emergency email</li>
+              <li>• Technical support provided in English and Hindi</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold mb-2 text-white">📧 Email Guidelines</h4>
+            <ul class="space-y-1">
+              <li>• Include order number for faster resolution</li>
+              <li>• Attach screenshots for technical issues</li>
+              <li>• Check spam folder for our responses</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold mb-2 text-white">🔒 Privacy Notice</h4>
+            <ul class="space-y-1">
+              <li>• All communications are confidential</li>
+              <li>• Personal data protected per our Privacy Policy</li>
+              <li>• Business inquiries kept strictly confidential</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold mb-2 text-white">⚡ Response Times</h4>
+            <ul class="space-y-1">
+              <li>• General inquiries: Within 24 hours</li>
+              <li>• Technical support: Within 12 hours</li>
+              <li>• Emergency issues: Within 2 hours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

@@ -161,3 +161,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email (dev)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'no-reply@example.com'
+
+# Razorpay Configuration
+RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID', 'rzp_test_your_key_id')
+RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET', 'your_key_secret')
+
+# Payment Configuration
+RAZORPAY_WEBHOOK_SECRET = os.getenv('RAZORPAY_WEBHOOK_SECRET', 'webhook_secret')
+PAYMENT_SUCCESS_URL = '/payment/success/'
+PAYMENT_FAILURE_URL = '/payment/failure/'

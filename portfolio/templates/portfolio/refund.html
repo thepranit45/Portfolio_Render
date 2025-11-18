@@ -1,0 +1,441 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Cancellation and Refund Policy — Pranit Mestry{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <a href="{% url 'portfolio:home' %}" class="text-primary mb-6 inline-block">← Back to Home</a>
+      
+      <div class="glass p-8 rounded-2xl subtle-glow">
+        <h1 class="text-4xl font-bold mb-6">Cancellation and Refund Policy</h1>
+        <div class="text-gray-400 mb-8">
+          <p><strong>Effective Date:</strong> November 18, 2025</p>
+          <p><strong>Last Updated:</strong> November 18, 2025</p>
+        </div>
+
+        <div class="space-y-8 text-gray-300">
+
+          <!-- Introduction -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">1. Overview</h2>
+            <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
+              <p class="mb-4">
+                This Cancellation and Refund Policy explains our policies regarding cancellations, refunds, 
+                and returns for digital products and services purchased from <strong>Pranit Mestry's Portfolio Website</strong>.
+              </p>
+              <div class="bg-yellow-900/20 border border-yellow-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-yellow-400">⚠️ Important Notice</h4>
+                <p class="text-sm">
+                  <strong>Processing Charges Apply:</strong> All refund requests are subject to processing charges 
+                  to cover payment gateway fees, administrative costs, and transaction processing expenses.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Digital Products Policy -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">2. Digital Products Refund Policy</h2>
+            
+            <div class="bg-purple-900/20 border border-purple-500/30 p-6 rounded-lg mb-6">
+              <h3 class="text-xl font-medium mb-3 text-purple-400">🔄 Eligibility Criteria</h3>
+              <p class="mb-4">Refunds for digital products are available under the following conditions:</p>
+              
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-green-900/20 border border-green-500/30 p-4 rounded-lg">
+                  <h4 class="font-medium mb-2 text-green-400">✅ Eligible for Refund</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Product not delivered within 48 hours</li>
+                    <li>• Download link not working after 24 hours</li>
+                    <li>• Product significantly different from description</li>
+                    <li>• Technical issues preventing product use</li>
+                    <li>• Duplicate purchase by mistake</li>
+                  </ul>
+                </div>
+                
+                <div class="bg-red-900/20 border border-red-500/30 p-4 rounded-lg">
+                  <h4 class="font-medium mb-2 text-red-400">❌ Not Eligible for Refund</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• Product successfully downloaded and accessed</li>
+                    <li>• Changed mind after purchase</li>
+                    <li>• Inability to use due to lack of technical skills</li>
+                    <li>• Product not meeting personal expectations</li>
+                    <li>• Request made after 7-day return period</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-800/50 p-6 rounded-lg">
+              <h3 class="text-xl font-medium mb-4 text-white">🕐 Refund Timeline</h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-4">
+                  <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                  <div class="flex-1">
+                    <p class="font-medium">Request Submission</p>
+                    <p class="text-sm text-gray-400">Submit refund request within 7 days of purchase</p>
+                  </div>
+                  <span class="text-blue-400 text-sm font-medium">0-7 days</span>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                  <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                  <div class="flex-1">
+                    <p class="font-medium">Review Process</p>
+                    <p class="text-sm text-gray-400">We review your request and verify eligibility</p>
+                  </div>
+                  <span class="text-purple-400 text-sm font-medium">2-3 days</span>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                  <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                  <div class="flex-1">
+                    <p class="font-medium">Refund Processing</p>
+                    <p class="text-sm text-gray-400">Approved refunds processed to original payment method</p>
+                  </div>
+                  <span class="text-green-400 text-sm font-medium">5-7 days</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Processing Charges -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">3. Processing Charges and Fees</h2>
+            
+            <div class="bg-orange-900/20 border border-orange-500/30 p-6 rounded-lg">
+              <h3 class="text-xl font-medium mb-4 text-orange-400">💰 Refund Processing Charges</h3>
+              <p class="mb-4">
+                <strong>Important:</strong> All refunds are subject to processing charges to cover various costs 
+                associated with payment processing and administrative work.
+              </p>
+              
+              <div class="space-y-4">
+                <div class="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 class="font-medium mb-3 text-white">Charge Breakdown:</h4>
+                  <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <h5 class="font-medium mb-2 text-red-400">🏦 Payment Gateway Charges</h5>
+                      <ul class="space-y-1">
+                        <li>• Razorpay processing fee: 2.36%</li>
+                        <li>• PayTM processing fee: 1.99%</li>
+                        <li>• PhonePe processing fee: 1.99%</li>
+                        <li>• Transaction charges: ₹2-₹5</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-medium mb-2 text-blue-400">🏢 Administrative Costs</h5>
+                      <ul class="space-y-1">
+                        <li>• Processing fee: ₹25</li>
+                        <li>• Documentation charges: ₹15</li>
+                        <li>• Customer service cost: ₹10</li>
+                        <li>• Bank transfer charges: ₹5-₹20</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-red-900/20 border border-red-500/30 p-4 rounded-lg">
+                  <h4 class="font-medium mb-2 text-red-400">📊 Total Processing Charge</h4>
+                  <p class="text-sm mb-2">
+                    <strong>Fixed Rate:</strong> 3.5% of transaction amount + ₹50 administrative fee
+                  </p>
+                  <p class="text-xs">
+                    <em>Example: For a ₹999 purchase, processing charges would be ₹35 (3.5%) + ₹50 = ₹85. 
+                    Refund amount: ₹999 - ₹85 = ₹914</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Refund Process -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">4. How to Request a Refund</h2>
+            
+            <div class="space-y-6">
+              <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-4 text-blue-400">📝 Step-by-Step Process</h3>
+                
+                <div class="space-y-4">
+                  <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">1</span>
+                    </div>
+                    <div>
+                      <h4 class="font-medium mb-1">Contact Our Support Team</h4>
+                      <p class="text-sm text-gray-400 mb-2">
+                        Email us at <a href="mailto:refunds@pranit-mestry.com" class="text-primary hover:underline">refunds@pranit-mestry.com</a> 
+                        or use our <a href="{% url 'portfolio:contact' %}" class="text-primary hover:underline">contact form</a>
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">2</span>
+                    </div>
+                    <div>
+                      <h4 class="font-medium mb-1">Provide Required Information</h4>
+                      <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• Order ID / Transaction ID</li>
+                        <li>• Purchase date and amount</li>
+                        <li>• Reason for refund request</li>
+                        <li>• Screenshots (if applicable)</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">3</span>
+                    </div>
+                    <div>
+                      <h4 class="font-medium mb-1">Wait for Review</h4>
+                      <p class="text-sm text-gray-400">
+                        Our team will review your request within 2-3 business days and notify you of the decision
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">4</span>
+                    </div>
+                    <div>
+                      <h4 class="font-medium mb-1">Receive Refund</h4>
+                      <p class="text-sm text-gray-400">
+                        If approved, refund will be processed to your original payment method minus processing charges
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-yellow-900/20 border border-yellow-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-yellow-400">📧 Email Template</h4>
+                <div class="bg-slate-800/50 p-4 rounded text-sm font-mono">
+                  <p class="mb-2">Subject: Refund Request - Order #[ORDER_ID]</p>
+                  <p class="mb-2">Dear Support Team,</p>
+                  <p class="mb-2">I would like to request a refund for my recent purchase:</p>
+                  <p class="mb-1">• Order ID: [YOUR_ORDER_ID]</p>
+                  <p class="mb-1">• Purchase Date: [DATE]</p>
+                  <p class="mb-1">• Amount: ₹[AMOUNT]</p>
+                  <p class="mb-1">• Reason: [DETAILED_REASON]</p>
+                  <p class="mb-2">Thank you for your assistance.</p>
+                  <p>[Your Name]</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cancellation Policy -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">5. Order Cancellation Policy</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-green-900/20 border border-green-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-3 text-green-400">✅ Free Cancellation Period</h3>
+                <p class="text-sm mb-4">
+                  You can cancel your order <strong>FREE of charge</strong> if:
+                </p>
+                <ul class="text-sm space-y-2">
+                  <li>🕐 <strong>Within 1 hour of purchase</strong></li>
+                  <li>📥 <strong>Before product download/access</strong></li>
+                  <li>📧 <strong>Before email delivery</strong></li>
+                  <li>⚡ <strong>For processing orders only</strong></li>
+                </ul>
+                
+                <div class="mt-4 p-3 bg-slate-800/50 rounded">
+                  <p class="text-xs">
+                    <strong>Quick Cancel:</strong> Contact us immediately at 
+                    <a href="mailto:urgent@pranit-mestry.com" class="text-primary">urgent@pranit-mestry.com</a> 
+                    for instant cancellation within the free period.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="bg-orange-900/20 border border-orange-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-3 text-orange-400">⚠️ Paid Cancellation</h3>
+                <p class="text-sm mb-4">
+                  Cancellation after the free period incurs charges:
+                </p>
+                <ul class="text-sm space-y-2">
+                  <li>💳 <strong>Payment gateway charges apply</strong></li>
+                  <li>💼 <strong>Administrative fee: ₹50</strong></li>
+                  <li>📊 <strong>Processing fee: 2-3% of order value</strong></li>
+                  <li>⏱️ <strong>Applies after 1 hour or upon access</strong></li>
+                </ul>
+                
+                <div class="mt-4 p-3 bg-slate-800/50 rounded">
+                  <p class="text-xs">
+                    <strong>Note:</strong> Once digital products are accessed or downloaded, 
+                    cancellation becomes a refund request subject to our refund policy.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Special Circumstances -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">6. Special Circumstances</h2>
+            
+            <div class="space-y-4">
+              <div class="bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-blue-400">🔧 Technical Issues</h4>
+                <p class="text-sm">
+                  If you experience technical difficulties preventing product use, we offer:
+                </p>
+                <ul class="text-sm mt-2 space-y-1">
+                  <li>• Free technical support (up to 2 hours)</li>
+                  <li>• Alternative download methods</li>
+                  <li>• Product replacement at no additional cost</li>
+                  <li>• Full refund if issues cannot be resolved (no processing charges)</li>
+                </ul>
+              </div>
+              
+              <div class="bg-purple-900/20 border border-purple-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-purple-400">🎁 Promotional Purchases</h4>
+                <p class="text-sm">
+                  Products purchased during sales or with discount codes:
+                </p>
+                <ul class="text-sm mt-2 space-y-1">
+                  <li>• Same refund policy applies</li>
+                  <li>• Refund based on actual amount paid</li>
+                  <li>• Discount codes cannot be reused</li>
+                  <li>• Processing charges calculated on paid amount</li>
+                </ul>
+              </div>
+              
+              <div class="bg-green-900/20 border border-green-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-green-400">🔄 Exchange Option</h4>
+                <p class="text-sm">
+                  Instead of a refund, you may choose to:
+                </p>
+                <ul class="text-sm mt-2 space-y-1">
+                  <li>• Exchange for another product of equal value</li>
+                  <li>• Receive store credit for future purchases</li>
+                  <li>• Upgrade to premium version (pay difference)</li>
+                  <li>• No processing charges for exchanges</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dispute Resolution -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">7. Dispute Resolution</h2>
+            
+            <div class="bg-slate-800/50 p-6 rounded-lg">
+              <h3 class="text-xl font-medium mb-4 text-white">🤝 Resolution Process</h3>
+              
+              <div class="space-y-4">
+                <div class="border-l-4 border-green-500 pl-4">
+                  <h4 class="font-medium text-green-400">Step 1: Direct Communication</h4>
+                  <p class="text-sm">Contact our customer service team to discuss your concerns</p>
+                </div>
+                
+                <div class="border-l-4 border-blue-500 pl-4">
+                  <h4 class="font-medium text-blue-400">Step 2: Manager Review</h4>
+                  <p class="text-sm">If unsatisfied, request escalation to our customer service manager</p>
+                </div>
+                
+                <div class="border-l-4 border-purple-500 pl-4">
+                  <h4 class="font-medium text-purple-400">Step 3: Third-Party Mediation</h4>
+                  <p class="text-sm">As a last resort, we agree to independent mediation</p>
+                </div>
+              </div>
+              
+              <div class="mt-6 p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg">
+                <h4 class="font-medium mb-2 text-blue-400">📞 Quick Resolution Contacts</h4>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                  <ul class="space-y-1">
+                    <li>📧 <strong>Email:</strong> support@pranit-mestry.com</li>
+                    <li>📱 <strong>Phone:</strong> +91 9876543210</li>
+                  </ul>
+                  <ul class="space-y-1">
+                    <li>⏰ <strong>Hours:</strong> 9 AM - 6 PM IST</li>
+                    <li>📅 <strong>Days:</strong> Monday - Friday</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Important Notes -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">8. Important Notes and Disclaimers</h2>
+            
+            <div class="space-y-4">
+              <div class="bg-red-900/20 border border-red-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-3 text-red-400">⚠️ Key Points to Remember</h3>
+                <ul class="text-sm space-y-2">
+                  <li>🔴 <strong>Processing charges are non-negotiable</strong> and cover actual costs incurred</li>
+                  <li>🔴 <strong>Refunds take 5-7 business days</strong> to reflect in your account</li>
+                  <li>🔴 <strong>Bank charges may apply</strong> depending on your financial institution</li>
+                  <li>🔴 <strong>Partial refunds are not available</strong> for bundled products</li>
+                  <li>🔴 <strong>All refund decisions are final</strong> and cannot be appealed</li>
+                </ul>
+              </div>
+              
+              <div class="bg-yellow-900/20 border border-yellow-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-yellow-400">📄 Legal Compliance</h4>
+                <p class="text-sm">
+                  This policy complies with Indian Consumer Protection Act, 2019 and RBI guidelines for digital transactions. 
+                  Processing charges are standard industry practice and legally permissible.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact Information -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">9. Contact Information</h2>
+            <div class="bg-slate-800/50 p-6 rounded-lg">
+              <p class="mb-4">
+                For refund requests, cancellations, or questions about this policy:
+              </p>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-medium mb-3 text-primary">📧 Refunds Department</h4>
+                  <ul class="space-y-2 text-sm">
+                    <li><strong>General:</strong> <a href="mailto:thepranit.19@gmail.com" class="text-primary hover:underline">thepranit.19@gmail.com</a></li>
+                    <li><strong>Phone:</strong> +91 9970343404</li>
+                    <li><strong>Response Time:</strong> Within 24 hours</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="font-medium mb-3 text-primary">🏢 Business Details</h4>
+                  <address class="text-sm not-italic">
+                    Pranit Mestry<br>
+                    123 Tech Street<br>
+                    Pune, Maharashtra 411001<br>
+                    India<br>
+                    <strong>Business Hours:</strong> 9 AM - 6 PM IST
+                  </address>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <section class="border-t border-gray-700 pt-6 text-center">
+            <p class="text-sm text-gray-500 mb-2">
+              We strive to provide fair and transparent refund policies while maintaining sustainable business operations.
+            </p>
+            <p class="text-xs text-gray-600">
+              Last updated: November 18, 2025 | Policy Version: 1.0
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

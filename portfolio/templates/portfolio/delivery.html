@@ -1,0 +1,497 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Shipping and Delivery Policy — Pranit Mestry{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <a href="{% url 'portfolio:home' %}" class="text-primary mb-6 inline-block">← Back to Home</a>
+      
+      <div class="glass p-8 rounded-2xl subtle-glow">
+        <h1 class="text-4xl font-bold mb-6">Shipping and Delivery Policy</h1>
+        <div class="text-gray-400 mb-8">
+          <p><strong>Effective Date:</strong> November 18, 2025</p>
+          <p><strong>Last Updated:</strong> November 18, 2025</p>
+        </div>
+
+        <div class="space-y-8 text-gray-300">
+
+          <!-- Introduction -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">1. Overview</h2>
+            <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
+              <p class="mb-4">
+                <strong>Pranit Mestry's Portfolio Website</strong> exclusively offers <strong>digital products and services</strong>. 
+                We do not sell, ship, or deliver any physical products.
+              </p>
+              <div class="bg-green-900/20 border border-green-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-green-400">📱 100% Digital Delivery</h4>
+                <p class="text-sm">
+                  All our products are delivered electronically via email, download links, or online access. 
+                  No physical shipping address required for any purchase.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Digital Delivery Process -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">2. Digital Delivery Process</h2>
+            
+            <div class="space-y-6">
+              <div class="bg-purple-900/20 border border-purple-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-4 text-purple-400">⚡ Instant Delivery Timeline</h3>
+                
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">1</span>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-medium text-white">Payment Confirmation</h4>
+                      <p class="text-sm text-gray-400">Secure payment processed through Razorpay/PayTM</p>
+                    </div>
+                    <span class="bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">Instant</span>
+                  </div>
+                  
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">2</span>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-medium text-white">Automated Processing</h4>
+                      <p class="text-sm text-gray-400">System generates download links and access credentials</p>
+                    </div>
+                    <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">1-2 min</span>
+                  </div>
+                  
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">3</span>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-medium text-white">Email Delivery</h4>
+                      <p class="text-sm text-gray-400">Download instructions sent to your email address</p>
+                    </div>
+                    <span class="bg-purple-500 text-white text-xs px-3 py-1 rounded-full font-medium">2-5 min</span>
+                  </div>
+                  
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold">4</span>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-medium text-white">Immediate Access</h4>
+                      <p class="text-sm text-gray-400">Click download links and start using your purchase</p>
+                    </div>
+                    <span class="bg-gradient-to-r from-green-500 to-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">Instant</span>
+                  </div>
+                </div>
+                
+                <div class="mt-4 p-3 bg-slate-800/50 rounded">
+                  <p class="text-sm">
+                    <strong>⚡ Total Delivery Time:</strong> Maximum 5 minutes from payment confirmation
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Delivery Methods -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">3. Delivery Methods</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-green-900/20 border border-green-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-4 text-green-400">📧 Email Delivery</h3>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">📎</span>
+                    <div>
+                      <strong>Download Links:</strong><br>
+                      Direct download URLs for instant access
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">🔐</span>
+                    <div>
+                      <strong>Access Credentials:</strong><br>
+                      Login details for premium content
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">📋</span>
+                    <div>
+                      <strong>Installation Instructions:</strong><br>
+                      Step-by-step setup guides
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">🎫</span>
+                    <div>
+                      <strong>License Information:</strong><br>
+                      Usage rights and terms
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-4 text-blue-400">🌐 Online Access</h3>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start gap-3">
+                    <span class="text-blue-400 mt-1">👤</span>
+                    <div>
+                      <strong>User Dashboard:</strong><br>
+                      Personal account with purchase history
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-blue-400 mt-1">☁️</span>
+                    <div>
+                      <strong>Cloud Storage:</strong><br>
+                      Access files anytime, anywhere
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-blue-400 mt-1">🔄</span>
+                    <div>
+                      <strong>Re-download Access:</strong><br>
+                      Download multiple times if needed
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-blue-400 mt-1">📱</span>
+                    <div>
+                      <strong>Mobile Compatible:</strong><br>
+                      Access from any device
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Product Types -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">4. Digital Product Categories</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-slate-800/30 p-6 rounded-lg">
+                <div class="text-center mb-4">
+                  <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span class="text-white text-2xl">💻</span>
+                  </div>
+                  <h3 class="text-xl font-medium text-purple-400">Software & Tools</h3>
+                </div>
+                <ul class="text-sm space-y-2">
+                  <li>• Source code files (.zip)</li>
+                  <li>• Application installers</li>
+                  <li>• Configuration files</li>
+                  <li>• Documentation (PDF)</li>
+                  <li>• License keys</li>
+                </ul>
+                <div class="mt-4 p-2 bg-purple-900/20 rounded text-center">
+                  <span class="text-xs text-purple-300">Delivery: 2-5 minutes</span>
+                </div>
+              </div>
+              
+              <div class="bg-slate-800/30 p-6 rounded-lg">
+                <div class="text-center mb-4">
+                  <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span class="text-white text-2xl">📚</span>
+                  </div>
+                  <h3 class="text-xl font-medium text-green-400">Educational Content</h3>
+                </div>
+                <ul class="text-sm space-y-2">
+                  <li>• Video tutorials</li>
+                  <li>• PDF guides & eBooks</li>
+                  <li>• Course materials</li>
+                  <li>• Template files</li>
+                  <li>• Exercise datasets</li>
+                </ul>
+                <div class="mt-4 p-2 bg-green-900/20 rounded text-center">
+                  <span class="text-xs text-green-300">Delivery: Instant</span>
+                </div>
+              </div>
+              
+              <div class="bg-slate-800/30 p-6 rounded-lg">
+                <div class="text-center mb-4">
+                  <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span class="text-white text-2xl">🎨</span>
+                  </div>
+                  <h3 class="text-xl font-medium text-orange-400">Design Resources</h3>
+                </div>
+                <ul class="text-sm space-y-2">
+                  <li>• Graphics & icons</li>
+                  <li>• Website templates</li>
+                  <li>• UI/UX components</li>
+                  <li>• Stock images</li>
+                  <li>• Font packages</li>
+                </ul>
+                <div class="mt-4 p-2 bg-orange-900/20 rounded text-center">
+                  <span class="text-xs text-orange-300">Delivery: 1-3 minutes</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Delivery Guarantee -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">5. Delivery Guarantee</h2>
+            
+            <div class="bg-gradient-to-r from-green-900/40 via-blue-900/40 to-purple-900/40 p-6 rounded-lg border border-green-500/30">
+              <h3 class="text-xl font-medium mb-4 text-green-400">🛡️ 100% Delivery Guarantee</h3>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-medium mb-3 text-white">✅ What We Guarantee:</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>🚀 <strong>Maximum 5-minute delivery</strong></li>
+                    <li>📧 <strong>Email confirmation for all orders</strong></li>
+                    <li>🔗 <strong>Working download links</strong></li>
+                    <li>📁 <strong>Complete file packages</strong></li>
+                    <li>💾 <strong>Virus-free downloads</strong></li>
+                    <li>🔄 <strong>Re-download access for 30 days</strong></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="font-medium mb-3 text-white">🚨 If Delivery Fails:</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>⏱️ <strong>Immediate notification to support team</strong></li>
+                    <li>📞 <strong>Priority customer service</strong></li>
+                    <li>🛠️ <strong>Manual delivery within 1 hour</strong></li>
+                    <li>💰 <strong>Full refund if unsuccessful</strong></li>
+                    <li>🎁 <strong>Bonus product for inconvenience</strong></li>
+                    <li>📋 <strong>Incident report & prevention</strong></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="mt-4 p-3 bg-slate-800/50 rounded">
+                <p class="text-sm text-center">
+                  <strong>💡 Quick Help:</strong> If you don't receive your download within 10 minutes, 
+                  contact us at <a href="mailto:delivery@pranit-mestry.com" class="text-primary hover:underline">delivery@pranit-mestry.com</a>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Technical Requirements -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">6. Technical Requirements</h2>
+            
+            <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-lg">
+              <h3 class="text-xl font-medium mb-4 text-yellow-400">⚙️ System Requirements for Delivery</h3>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-medium mb-3 text-white">📱 Device Requirements:</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>✅ Computer, tablet, or smartphone</li>
+                    <li>✅ Internet connection (minimum 1 Mbps)</li>
+                    <li>✅ Modern web browser (Chrome, Firefox, Safari, Edge)</li>
+                    <li>✅ Email access capability</li>
+                    <li>✅ Storage space for downloads</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="font-medium mb-3 text-white">🔧 Software Requirements:</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>✅ JavaScript enabled in browser</li>
+                    <li>✅ Cookies enabled for session management</li>
+                    <li>✅ PDF reader for documentation</li>
+                    <li>✅ Archive extractor for .zip files</li>
+                    <li>✅ Antivirus software (recommended)</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="mt-4 p-3 bg-slate-800/50 rounded">
+                <p class="text-sm">
+                  <strong>⚠️ Note:</strong> We support all major operating systems (Windows, macOS, Linux, iOS, Android). 
+                  Specific software requirements are mentioned in product descriptions.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Download Instructions -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">7. Download Instructions</h2>
+            
+            <div class="space-y-6">
+              <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
+                <h3 class="text-xl font-medium mb-4 text-blue-400">📥 Step-by-Step Download Guide</h3>
+                
+                <div class="space-y-4">
+                  <div class="border-l-4 border-green-500 pl-4">
+                    <h4 class="font-medium text-green-400">1. Check Your Email</h4>
+                    <p class="text-sm text-gray-400">
+                      Look for email from "noreply@pranit-mestry.com" with subject "Your Digital Purchase - Order #[ID]"
+                    </p>
+                  </div>
+                  
+                  <div class="border-l-4 border-blue-500 pl-4">
+                    <h4 class="font-medium text-blue-400">2. Verify Order Details</h4>
+                    <p class="text-sm text-gray-400">
+                      Confirm order number, purchase amount, and product names match your purchase
+                    </p>
+                  </div>
+                  
+                  <div class="border-l-4 border-purple-500 pl-4">
+                    <h4 class="font-medium text-purple-400">3. Click Download Links</h4>
+                    <p class="text-sm text-gray-400">
+                      Click on download buttons/links in the email. Links are valid for 30 days
+                    </p>
+                  </div>
+                  
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <h4 class="font-medium text-orange-400">4. Save Files Securely</h4>
+                    <p class="text-sm text-gray-400">
+                      Save downloads to a safe location and create backups of important files
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-red-900/20 border border-red-500/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-red-400">🚫 Troubleshooting Common Issues</h4>
+                <ul class="text-sm space-y-1">
+                  <li>📧 <strong>Email not received:</strong> Check spam/junk folder</li>
+                  <li>🔗 <strong>Link not working:</strong> Try copying link to new browser tab</li>
+                  <li>⬇️ <strong>Download failed:</strong> Right-click link and "Save As..."</li>
+                  <li>🔐 <strong>File corrupted:</strong> Re-download from fresh link</li>
+                  <li>💾 <strong>Storage full:</strong> Free up space and retry download</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Customer Support -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">8. Delivery Support</h2>
+            
+            <div class="bg-slate-800/50 p-6 rounded-lg">
+              <h3 class="text-xl font-medium mb-4 text-white">🎧 24/7 Delivery Support</h3>
+              
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span class="text-white text-2xl">📧</span>
+                  </div>
+                  <h4 class="font-medium text-green-400 mb-2">Email Support</h4>
+                  <p class="text-sm text-gray-400 mb-2">delivery@pranit-mestry.com</p>
+                  <span class="text-xs bg-green-500 text-white px-2 py-1 rounded">Response: 15 min</span>
+                </div>
+                
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span class="text-white text-2xl">💬</span>
+                  </div>
+                  <h4 class="font-medium text-blue-400 mb-2">Live Chat</h4>
+                  <p class="text-sm text-gray-400 mb-2">Website chat widget</p>
+                  <span class="text-xs bg-blue-500 text-white px-2 py-1 rounded">Response: 5 min</span>
+                </div>
+                
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span class="text-white text-2xl">📱</span>
+                  </div>
+                  <h4 class="font-medium text-purple-400 mb-2">Phone Support</h4>
+                  <p class="text-sm text-gray-400 mb-2">+91 9876543210</p>
+                  <span class="text-xs bg-purple-500 text-white px-2 py-1 rounded">Available: 9AM-6PM</span>
+                </div>
+              </div>
+              
+              <div class="mt-6 p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg">
+                <h4 class="font-medium mb-2 text-blue-400">🚨 Emergency Delivery Issues</h4>
+                <p class="text-sm">
+                  For urgent delivery problems, call our emergency line: <strong>+91 9876543210</strong> 
+                  or email <strong>urgent@pranit-mestry.com</strong> with "URGENT DELIVERY" in the subject line.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Legal Information -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">9. Legal and Compliance Information</h2>
+            
+            <div class="space-y-4">
+              <div class="bg-slate-800/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-blue-400">🌍 Geographic Availability</h4>
+                <p class="text-sm">
+                  Our digital delivery services are available worldwide. No geographic restrictions apply 
+                  to digital product downloads. International customers welcome.
+                </p>
+              </div>
+              
+              <div class="bg-slate-800/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-green-400">📜 Regulatory Compliance</h4>
+                <p class="text-sm">
+                  All digital deliveries comply with Indian IT Act 2000, GDPR for EU customers, and international 
+                  e-commerce regulations. We maintain proper records of all digital transactions.
+                </p>
+              </div>
+              
+              <div class="bg-slate-800/30 p-4 rounded-lg">
+                <h4 class="font-medium mb-2 text-orange-400">🔒 Data Security</h4>
+                <p class="text-sm">
+                  Download links are secured with encryption and expire after 30 days. Customer email addresses 
+                  are protected according to our Privacy Policy and never shared with third parties.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact Information -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-white">10. Contact Information</h2>
+            <div class="bg-slate-800/50 p-6 rounded-lg">
+              <p class="mb-4">
+                For questions about delivery, download issues, or technical support:
+              </p>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-medium mb-3 text-primary">🚚 Delivery Department</h4>
+                  <ul class="space-y-2 text-sm">
+                    <li><strong>Email:</strong> <a href="mailto:thepranit.19@gmail.com" class="text-primary hover:underline">thepranit.19@gmail.com</a></li>
+                    <li><strong>Phone:</strong> +91 9970343404</li>
+                    <li><strong>Hours:</strong> 24/7 Email, 9 AM - 6 PM Phone</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="font-medium mb-3 text-primary">🏢 Business Address</h4>
+                  <address class="text-sm not-italic">
+                    Pranit Mestry<br>
+                    123 Tech Street<br>
+                    Pune, Maharashtra 411001<br>
+                    India
+                  </address>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <section class="border-t border-gray-700 pt-6 text-center">
+            <p class="text-sm text-gray-500 mb-4">
+              Thank you for choosing our digital products. We're committed to fast, secure, and reliable delivery.
+            </p>
+            <p class="text-xs text-gray-600">
+              Last updated: November 18, 2025 | Delivery Policy Version: 1.0
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

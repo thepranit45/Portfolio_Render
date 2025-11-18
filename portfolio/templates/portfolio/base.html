@@ -82,6 +82,9 @@
         <a href="{% url 'portfolio:projects' %}" class="text-gray-400 hover:text-white transition-colors magnetic-btn px-4 py-2 rounded flex items-center gap-1">
           <span>📂</span> <span>Projects</span>
         </a>
+        <a href="{% url 'portfolio:services' %}" class="text-gray-400 hover:text-white transition-colors magnetic-btn px-4 py-2 rounded flex items-center gap-1">
+          <span>💼</span> <span>Services</span>
+        </a>
         <a href="{% url 'portfolio:contact' %}" class="text-gray-400 hover:text-white transition-colors magnetic-btn px-4 py-2 rounded flex items-center gap-1">
           <span>💬</span> <span>Contact</span>
         </a>
@@ -112,6 +115,88 @@
   {% endif %}
 
   {% block content %}{% endblock %}
+
+  <!-- Footer with Policy Links -->
+  <footer class="bg-slate-900/90 border-t border-gray-700/30 py-8 mt-20">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- About Section -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <span>💻</span> Pranit Mestry
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Full-stack developer passionate about creating innovative web solutions 
+            and delivering exceptional user experiences.
+          </p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <span>🔗</span> Quick Links
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="{% url 'portfolio:home' %}" class="text-gray-400 hover:text-primary transition-colors">🏠 Home</a></li>
+            <li><a href="{% url 'portfolio:about' %}" class="text-gray-400 hover:text-primary transition-colors">👤 About</a></li>
+            <li><a href="{% url 'portfolio:projects' %}" class="text-gray-400 hover:text-primary transition-colors">📂 Projects</a></li>
+            <li><a href="{% url 'portfolio:contact' %}" class="text-gray-400 hover:text-primary transition-colors">💬 Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Legal & Policies -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <span>⚖️</span> Legal & Policies
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="{% url 'portfolio:privacy' %}" class="text-gray-400 hover:text-primary transition-colors">🔒 Privacy Policy</a></li>
+            <li><a href="{% url 'portfolio:terms' %}" class="text-gray-400 hover:text-primary transition-colors">📋 Terms & Conditions</a></li>
+            <li><a href="{% url 'portfolio:refund' %}" class="text-gray-400 hover:text-primary transition-colors">💳 Refund Policy</a></li>
+            <li><a href="{% url 'portfolio:delivery' %}" class="text-gray-400 hover:text-primary transition-colors">📦 Delivery Policy</a></li>
+          </ul>
+        </div>
+        
+        <!-- Connect -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 flex items-center gap-2">
+            <span>🌐</span> Connect
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://linkedin.com/in/pranit-mestry" target="_blank" class="text-gray-400 hover:text-primary transition-colors">💼 LinkedIn</a></li>
+            <li><a href="https://github.com/thepranit45" target="_blank" class="text-gray-400 hover:text-primary transition-colors">💻 GitHub</a></li>
+            <li><a href="mailto:pranit.mestry@gmail.com" class="text-gray-400 hover:text-primary transition-colors">📧 Email</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank" class="text-gray-400 hover:text-primary transition-colors">📱 WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Section -->
+      <div class="border-t border-gray-700/30 mt-8 pt-6 text-center">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-gray-400 text-sm">
+            © {{ "now"|date:"Y" }} Pranit Mestry. All rights reserved.
+          </p>
+          <div class="flex items-center gap-4 text-xs text-gray-500">
+            <span>📍 Pune, Maharashtra, India</span>
+            <span>•</span>
+            <span>📧 contact@pranit-mestry.com</span>
+            <span>•</span>
+            <span>📱 +91 9876543210</span>
+          </div>
+        </div>
+        
+        <!-- Payment Security Notice -->
+        <div class="mt-4 text-xs text-gray-500 bg-slate-800/30 p-3 rounded-lg">
+          <span class="text-green-400">🔒</span> 
+          Payments processed securely through trusted gateways. 
+          All transactions are encrypted and protected. 
+          <a href="{% url 'portfolio:privacy' %}" class="text-primary hover:underline">Privacy Policy</a> 
+          applies to all services.
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script type="module" src="{% static 'portfolio/js/main.js' %}"></script>
   {% block scripts %}{% endblock %}

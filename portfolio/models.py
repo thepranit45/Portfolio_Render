@@ -1,4 +1,6 @@
 from django.db import models
+import uuid
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=120)
@@ -9,3 +11,103 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.name} <{self.email}>"
+
+
+class PaymentOrder(models.Model):
+    """Model to store payment orders"""
+    CURRENCY_CHOICES = [
+        ('INR', 'Indian Rupee'),
+        ('USD', 'US Dollar'),
+    ]
+    
+    STATUS_CHOICES = [
+        ('created', 'Created'),
+        ('pending', 'Pending'),
+        ('paid', 'Paid'),
+        ('failed', 'Failed'),
+        ('cancelled', 'Cancelled'),
+    ]
+    
+    order_id = models.CharField(max_length=100, unique=True, default=uuid.uuid4)
+    razorpay_order_id = models.CharField(max_length=100, blank=True, null=True)
+    customer_name = models.CharField(max_length=100)
+    customer_email = models.EmailField()
+    customer_phone = models.CharField(max_length=15, blank=True, null=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, default='INR')
+    description = models.TextField(blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='created')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    # Additional metadata
+    notes = models.JSONField(default=dict, blank=True)
+    
+    class Meta:
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"Order {self.order_id} - {self.customer_name} - ₹{self.amount}"
+
+
+class Payment(models.Model):
+    """Model to store payment transactions"""
+    PAYMENT_STATUS_CHOICES = [
+        ('created', 'Created'),
+        ('authorized', 'Authorized'),
+        ('captured', 'Captured'),
+        ('refunded', 'Refunded'),
+        ('failed', 'Failed'),
+    ]
+    
+    order = models.ForeignKey(PaymentOrder, on_delete=models.CASCADE, related_name='payments')
+    razorpay_payment_id = models.CharField(max_length=100, unique=True)
+    razorpay_order_id = models.CharField(max_length=100)
+    razorpay_signature = models.CharField(max_length=500, blank=True, null=True)
+    
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    currency = models.CharField(max_length=3, default='INR')
+    status = models.CharField(max_length=20, choices=PAYMENT_STATUS_CHOICES, default='created')
+    method = models.CharField(max_length=50, blank=True)  # card, netbanking, wallet, upi
+    
+    # Payment details
+    captured_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    # Additional data from Razorpay
+    payment_data = models.JSONField(default=dict, blank=True)
+    
+    class Meta:
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"Payment {self.razorpay_payment_id} - {self.status}"
+
+
+class Service(models.Model):
+    """Model to define services that can be purchased"""
+    SERVICE_TYPES = [
+        ('consultation', 'Technical Consultation'),
+        ('development', 'Custom Development'),
+        ('maintenance', 'Website Maintenance'),
+        ('training', 'Training Session'),
+        ('other', 'Other Services'),
+    ]
+    
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    service_type = models.CharField(max_length=20, choices=SERVICE_TYPES)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    currency = models.CharField(max_length=3, default='INR')
+    duration = models.CharField(max_length=100, blank=True)  # e.g., "1 hour", "1 week"
+    is_active = models.BooleanField(default=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['service_type', 'name']
+    
+    def __str__(self):
+        return f"{self.name} - ₹{self.price}"

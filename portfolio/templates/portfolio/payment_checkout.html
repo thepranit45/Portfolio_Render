@@ -1,0 +1,232 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Complete Payment — Order {{ order.order_id }}{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32 bg-dark/50">
+  <div class="container mx-auto px-6">
+    
+    <!-- Progress Indicator -->
+    <div class="max-w-4xl mx-auto mb-8">
+      <div class="flex items-center justify-center gap-4 text-sm">
+        <div class="flex items-center gap-2 text-green-400">
+          <span class="bg-green-500 text-dark rounded-full w-8 h-8 flex items-center justify-center font-bold">✓</span>
+          <span class="font-semibold">Details</span>
+        </div>
+        <div class="h-0.5 bg-green-500 w-12"></div>
+        <div class="flex items-center gap-2 text-primary">
+          <span class="bg-primary text-dark rounded-full w-8 h-8 flex items-center justify-center font-bold">2</span>
+          <span class="font-semibold">Payment</span>
+        </div>
+        <div class="h-0.5 bg-gray-700 w-12"></div>
+        <div class="flex items-center gap-2 text-gray-500">
+          <span class="border-2 border-gray-700 text-gray-500 rounded-full w-8 h-8 flex items-center justify-center">3</span>
+          <span>Confirmation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      
+      <!-- Payment Details Card -->
+      <div class="glass p-8 rounded-2xl subtle-glow mb-8">
+        <div class="text-center mb-8">
+          <div class="text-6xl mb-4">💳</div>
+          <h1 class="text-3xl font-bold mb-2">Complete Your Payment</h1>
+          <p class="text-gray-400">Secure payment powered by Razorpay</p>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="bg-slate-800/30 p-6 rounded-lg mb-8">
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-3">
+            <span>📋</span> Order Summary
+          </h3>
+          
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-400">Order ID</span>
+              <span class="font-mono text-primary">{{ order.order_id }}</span>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <span class="text-gray-400">Service</span>
+              <span class="text-white">{{ service.name }}</span>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <span class="text-gray-400">Customer</span>
+              <span class="text-white">{{ order.customer_name }}</span>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <span class="text-gray-400">Email</span>
+              <span class="text-white">{{ order.customer_email }}</span>
+            </div>
+            
+            <hr class="border-gray-700 my-4">
+            
+            <div class="flex justify-between items-center text-xl font-bold">
+              <span class="text-white">Total Amount</span>
+              <span class="text-primary">₹{{ order.amount }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Button -->
+        <div class="text-center">
+          <button id="pay-button" class="btn-primary text-lg px-12 py-4 justify-center">
+            <span>�</span> Pay ₹{{ order.amount }} with Razorpay
+          </button>
+          
+          <p class="text-gray-500 text-sm mt-4">
+            Click the button above to open Razorpay's secure payment gateway
+          </p>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="mt-8 bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
+          <div class="text-center mb-4">
+            <div class="inline-flex items-center gap-3 bg-slate-800/50 px-4 py-2 rounded-lg mb-4">
+              <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" class="h-5" style="filter: brightness(0) invert(1);">
+              <span class="text-white font-semibold">Secured by Razorpay</span>
+            </div>
+          </div>
+          
+          <h4 class="font-semibold mb-4 text-blue-400 text-center">Choose Your Payment Method</h4>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
+            <div class="flex flex-col items-center gap-2">
+              <span class="text-2xl">💳</span>
+              <span class="text-gray-300">Cards</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <span class="text-2xl">🏦</span>
+              <span class="text-gray-300">Net Banking</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <span class="text-2xl">📱</span>
+              <span class="text-gray-300">UPI</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+              <span class="text-2xl">👛</span>
+              <span class="text-gray-300">Wallets</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Security Information -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-green-900/20 border border-green-500/30 p-6 rounded-xl">
+          <div class="flex items-start gap-3">
+            <span class="text-green-400 text-2xl">🔒</span>
+            <div>
+              <h4 class="font-semibold text-green-400 mb-2">Razorpay Secured</h4>
+              <p class="text-gray-400 text-sm">
+                Your payment is processed through Razorpay's encrypted, bank-level security
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+          <div class="flex items-start gap-3">
+            <span class="text-blue-400 text-2xl">🛡️</span>
+            <div>
+              <h4 class="font-semibold text-blue-400 mb-2">PCI Compliant</h4>
+              <p class="text-gray-400 text-sm">
+                Razorpay is PCI DSS Level 1 certified for secure payment processing
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Razorpay Checkout Script -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById('pay-button').onclick = function(e) {
+    e.preventDefault();
+    
+    var options = {
+        "key": "{{ razorpay_key_id }}", // Enter the Key ID generated from the Dashboard
+        "amount": "{{ amount }}", // Amount is in currency subunits (paise)
+        "currency": "{{ currency }}",
+        "name": "Pranit Mestry",
+        "description": "{{ service.name }}",
+        "order_id": "{{ razorpay_order_id }}", // This is the order_id created in the backend
+        "handler": function (response) {
+            // Payment successful
+            // Send the payment response to your server for verification
+            var form = document.createElement('form');
+            form.method = 'post';
+            form.action = '{% url "portfolio:payment_callback" %}';
+            
+            // Add CSRF token
+            var csrfToken = document.createElement('input');
+            csrfToken.type = 'hidden';
+            csrfToken.name = 'csrfmiddlewaretoken';
+            csrfToken.value = '{{ csrf_token }}';
+            form.appendChild(csrfToken);
+            
+            // Add payment details
+            var paymentId = document.createElement('input');
+            paymentId.type = 'hidden';
+            paymentId.name = 'razorpay_payment_id';
+            paymentId.value = response.razorpay_payment_id;
+            form.appendChild(paymentId);
+            
+            var orderId = document.createElement('input');
+            orderId.type = 'hidden';
+            orderId.name = 'razorpay_order_id';
+            orderId.value = response.razorpay_order_id;
+            form.appendChild(orderId);
+            
+            var signature = document.createElement('input');
+            signature.type = 'hidden';
+            signature.name = 'razorpay_signature';
+            signature.value = response.razorpay_signature;
+            form.appendChild(signature);
+            
+            document.body.appendChild(form);
+            form.submit();
+        },
+        "prefill": {
+            "name": "{{ order.customer_name }}",
+            "email": "{{ order.customer_email }}",
+            "contact": "{{ order.customer_phone }}"
+        },
+        "notes": {
+            "order_id": "{{ order.order_id }}",
+            "service": "{{ service.name }}"
+        },
+        "theme": {
+            "color": "#3B82F6"
+        },
+        "modal": {
+            "ondismiss": function(){
+                // Handle payment cancellation
+                console.log('Payment cancelled by user');
+            }
+        }
+    };
+    
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function (response){
+        // Payment failed
+        alert('Payment failed: ' + response.error.description);
+        console.log('Payment failed:', response.error);
+        
+        // Redirect to failure page
+        window.location.href = '{% url "portfolio:payment_failure" %}';
+    });
+    
+    rzp.open();
+}
+</script>
+{% endblock %}

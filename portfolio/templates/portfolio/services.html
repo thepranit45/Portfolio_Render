@@ -1,0 +1,168 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Our Services — Pranit Mestry{% endblock %}
+
+{% block content %}
+<section class="min-h-screen py-20 pt-32 bg-dark/50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h1 class="mb-8">💼 Our Services</h1>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        Professional development services tailored to your needs. 
+        Choose from our range of offerings and get started with secure online payments.
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      
+      {% if services %}
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+          {% for service in services %}
+            <div class="glass p-8 rounded-2xl subtle-glow hover-scale">
+              
+              <!-- Service Header -->
+              <div class="text-center mb-6">
+                {% if service.service_type == 'consultation' %}
+                  <div class="text-5xl mb-4">🤝</div>
+                  <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-semibold">Consultation</span>
+                {% elif service.service_type == 'development' %}
+                  <div class="text-5xl mb-4">💻</div>
+                  <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold">Development</span>
+                {% elif service.service_type == 'maintenance' %}
+                  <div class="text-5xl mb-4">🔧</div>
+                  <span class="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full text-sm font-semibold">Maintenance</span>
+                {% elif service.service_type == 'training' %}
+                  <div class="text-5xl mb-4">🎓</div>
+                  <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm font-semibold">Training</span>
+                {% else %}
+                  <div class="text-5xl mb-4">⭐</div>
+                  <span class="bg-gray-500/20 text-gray-300 px-3 py-1 rounded-full text-sm font-semibold">Other</span>
+                {% endif %}
+              </div>
+
+              <!-- Service Details -->
+              <h3 class="text-2xl font-bold mb-4 text-center text-white">{{ service.name }}</h3>
+              
+              <div class="mb-6">
+                <p class="text-gray-300 text-center leading-relaxed">
+                  {{ service.description }}
+                </p>
+              </div>
+
+              <!-- Duration -->
+              {% if service.duration %}
+                <div class="flex items-center justify-center gap-2 mb-4 text-gray-400">
+                  <span>⏱️</span>
+                  <span class="text-sm">Duration: {{ service.duration }}</span>
+                </div>
+              {% endif %}
+
+              <!-- Pricing -->
+              <div class="text-center mb-6">
+                <div class="text-4xl font-bold text-primary mb-2">
+                  ₹{{ service.price }}
+                </div>
+                <p class="text-gray-400 text-sm">One-time payment</p>
+              </div>
+
+              <!-- CTA Button -->
+              <div class="text-center">
+                <a href="{% url 'portfolio:create_payment' service.id %}" 
+                   class="btn-primary w-full justify-center">
+                  <span>�</span> Buy Now with Razorpay
+                </a>
+              </div>
+
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <!-- No Services Available -->
+        <div class="glass p-12 rounded-2xl text-center">
+          <div class="text-6xl mb-6">🔧</div>
+          <h2 class="text-2xl font-bold mb-4 text-white">Services Coming Soon</h2>
+          <p class="text-gray-300 text-lg mb-6">
+            We're currently preparing our service offerings. 
+            Please check back soon or contact us directly for custom requirements.
+          </p>
+          <a href="{% url 'portfolio:contact' %}" class="btn-primary">
+            <span>📧</span> Contact Us
+          </a>
+        </div>
+      {% endif %}
+
+      <!-- Why Choose Us -->
+      <div class="mt-16 glass p-8 rounded-2xl subtle-glow">
+        <h2 class="text-3xl font-bold mb-8 text-center">🌟 Why Choose Our Services?</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🔒</div>
+            <h4 class="font-semibold mb-2 text-green-400">Razorpay Secured</h4>
+            <p class="text-gray-400 text-sm">
+              All payments processed securely through Razorpay with industry-standard encryption
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-4xl mb-4">⚡</div>
+            <h4 class="font-semibold mb-2 text-blue-400">Fast Delivery</h4>
+            <p class="text-gray-400 text-sm">
+              Quick turnaround times with regular progress updates throughout the project
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-4xl mb-4">🎯</div>
+            <h4 class="font-semibold mb-2 text-purple-400">Quality Assured</h4>
+            <p class="text-gray-400 text-sm">
+              Professional quality work with post-delivery support and satisfaction guarantee
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="mt-12 bg-blue-900/20 border border-blue-500/30 p-8 rounded-2xl">
+        <h3 class="text-xl font-bold mb-6 text-blue-400 text-center flex items-center justify-center gap-3">
+          <span>💳</span> Secure Payment with Razorpay
+        </h3>
+        
+        <div class="text-center mb-6">
+          <div class="inline-flex items-center gap-3 bg-slate-800/50 px-6 py-3 rounded-lg">
+            <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" class="h-6" style="filter: brightness(0) invert(1);">
+            <span class="text-white font-semibold">Powered by Razorpay</span>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="bg-slate-800/30 p-4 rounded-lg">
+            <div class="text-2xl mb-2">💳</div>
+            <p class="text-sm text-gray-300">Credit/Debit Cards</p>
+          </div>
+          
+          <div class="bg-slate-800/30 p-4 rounded-lg">
+            <div class="text-2xl mb-2">🏦</div>
+            <p class="text-sm text-gray-300">Net Banking</p>
+          </div>
+          
+          <div class="bg-slate-800/30 p-4 rounded-lg">
+            <div class="text-2xl mb-2">📱</div>
+            <p class="text-sm text-gray-300">UPI Payments</p>
+          </div>
+          
+          <div class="bg-slate-800/30 p-4 rounded-lg">
+            <div class="text-2xl mb-2">👛</div>
+            <p class="text-sm text-gray-300">Digital Wallets</p>
+          </div>
+        </div>
+        
+        <p class="text-center text-gray-400 text-sm mt-6">
+          🔐 All transactions are secured by Razorpay's PCI DSS compliant infrastructure
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
