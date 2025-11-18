@@ -1,4 +1,8 @@
-Live Website - https://portfo-d50i.onrender.com/
+Live Website - https://portfo-d50i.onrender.com/ 
+
+
+
+
 Pranit Gopale — Portfolio Website
 A personal portfolio and product listing site built with Django. The site showcases projects (Student Result System, Attendance Management System), provides downloadable documentation PDFs, and uses WhatsApp as the primary contact / purchase channel.
 
@@ -32,3 +36,4 @@ portfolio — Django app (templates, models, views)
 portfolio — all front-end templates (home, projects, project_detail, etc.)
 portfolio — CSS, JS, images, PDF docs
 requirements.txt — Python dependencies
+
